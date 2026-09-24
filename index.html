@@ -541,6 +541,11 @@ button{touch-action:manipulation;}
 .mobile-more.show{display:none;}
 .mobile-more button{min-height:48px;display:flex;align-items:center;gap:10px;padding:0 12px;border:0;border-radius:var(--radius-control);background:transparent;color:var(--text-primary);font-size:13px;font-weight:600;text-align:left;}
 .mobile-more button:hover{background:var(--surface-secondary);}
+.mobile-more-label{padding:7px 12px 5px;color:var(--text-muted);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.mobile-more-account{margin-top:8px;padding-top:8px;border-top:1px solid var(--separator);}
+.mobile-more-account-identity{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;padding:5px 12px 8px;font-size:12px;line-height:18px;overflow-wrap:anywhere;}
+.mobile-more-account-identity span{color:var(--text-muted);text-transform:capitalize;}
+.mobile-more .mobile-more-logout{width:100%;color:var(--text-secondary);}
 .mobile-more-backdrop{display:none;position:fixed;inset:0;z-index:93;background:rgba(20,23,27,.28);}
 .mobile-more-backdrop.show{display:none;}
 @media(max-width:1100px){
@@ -581,7 +586,8 @@ button{touch-action:manipulation;}
   .two-col,.eval-grid{gap:var(--space-3);margin-bottom:var(--space-3);}
   .section-hint{padding:var(--space-2) var(--space-3);margin-bottom:var(--space-3);}
   .bottom-nav{display:flex;height:64px;padding:0 4px env(safe-area-inset-bottom);background:rgba(255,255,255,.98);box-shadow:0 -8px 24px rgba(26,29,34,.05);}
-  .mobile-more.show{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+  .mobile-more.show{display:block;}
+  .mobile-more-links{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
   .mobile-more-backdrop.show{display:block;}
   .bn-btn{position:relative;min-width:0;gap:2px;padding:7px 2px 5px;color:var(--text-muted);font-size:10px;line-height:14px;font-weight:600;}
   .bn-btn .bn-ic{height:20px;display:flex;align-items:center;justify-content:center;color:currentColor;font-size:0;}
@@ -640,7 +646,7 @@ body{background:var(--app-bg);color:var(--text-primary);}
 .utility-label{color:var(--text-muted);font-size:10px;letter-spacing:.09em;}
 .utility-mark{background:var(--brand-accent);}
 .sync-indicator{color:var(--text-muted);border-left-color:var(--separator);}
-.content{padding:30px 34px 52px;max-width:1500px;}
+.content{padding:30px 34px 52px;}
 .page-header{padding:0 0 22px;margin-bottom:24px;border-bottom:0;align-items:flex-end;}
 .page-eyebrow{color:var(--brand-accent);font-size:10px;letter-spacing:.12em;}
 .page-title{font-size:30px;line-height:36px;font-weight:700;letter-spacing:-.04em;}
@@ -664,7 +670,7 @@ body{background:var(--app-bg);color:var(--text-primary);}
 .cc-metric-label{font-size:10px;letter-spacing:.05em;color:var(--text-muted);text-transform:none;font-weight:600;}
 .cc-metric-value{font-size:24px;line-height:30px;font-weight:700;color:var(--text-primary);}
 .cc-metric-sub{font-size:11px;color:var(--text-muted);}
-.cc-section:nth-of-type(3){background:transparent;border:0;box-shadow:none;padding:0;}
+.cc-section.cc-position{background:transparent;border:0;box-shadow:none;padding:0;}
 .cc-table-wrap{border:1px solid var(--separator);border-radius:11px;overflow:auto;margin-top:4px;}
 .cc-table{font-size:12px;}
 .cc-table th{background:#f8f9fa;border-bottom:1px solid var(--separator);padding:11px 12px;text-transform:none;letter-spacing:0;font-size:11px;font-weight:600;color:var(--text-secondary);}
@@ -791,13 +797,13 @@ body{background:#f5f6f8;color:#18202b;}
 .main{margin-left:208px;}
 .topbar{height:60px;padding:0 30px;background:rgba(245,246,248,.92);border-bottom:1px solid #e6e9ee;backdrop-filter:blur(12px);}
 .utility-label{color:#8993a1;font-size:10px;letter-spacing:.09em;}.utility-mark{background:#bd2d2f;}.sync-indicator{color:#8993a1;border-left-color:#e6e9ee;}
-.content{padding:30px 34px 52px;max-width:1500px;}
+.content{padding:30px 34px 52px;max-width:1920px;margin-inline:auto;}
 .page-header{padding:0 0 22px;margin-bottom:24px;border-bottom:0;align-items:flex-end;}.page-eyebrow{color:#bd2d2f;font-size:10px;letter-spacing:.12em;}.page-title{font-size:30px;line-height:36px;font-weight:700;letter-spacing:-.04em;}.page-context{font-size:13px;color:#526071;margin-top:6px;}
 .page-header-actions .btn-primary{border-radius:10px;box-shadow:0 6px 14px rgba(189,45,47,.16);}.btn-primary{background:#bd2d2f;border-radius:9px;}.btn-primary:hover{background:#a92527;opacity:1;}
 .cc{gap:22px;}.cc-section{background:#fff;border:1px solid #e6e9ee;border-radius:14px;padding:20px 22px;box-shadow:0 3px 12px rgba(27,39,55,.035);}.cc-section-head{padding-bottom:13px;border-bottom:0;margin-bottom:0;}.cc-section-title{font-size:15px;line-height:22px;letter-spacing:-.01em;text-transform:none;font-weight:700;}.cc-section-meta{font-size:11px;color:#8993a1;}
 .cc-attention{border-top:1px solid #e6e9ee;border-left:3px solid #a86d17;padding-left:20px;}.cc-attention-row{min-height:50px;padding:8px 0;border-bottom-color:#e6e9ee;}.cc-attention-action{color:#bd2d2f;border-radius:8px;padding:0 8px;}.cc-attention-action:hover{background:#fbeded;text-decoration:none;}
 .cc-metrics{grid-template-columns:1.35fr 1.7fr 1.45fr 1.5fr 1.35fr 1.7fr;border:0;gap:10px;background:transparent;margin-top:6px;}.cc-metric{background:#f8f9fa;border:1px solid #e6e9ee;border-radius:12px;padding:15px 16px!important;min-height:96px;}.cc-metric:first-child{padding-left:16px;}.cc-metric:last-child{padding-right:16px;}.cc-metric-label{font-size:10px;letter-spacing:.05em;color:#8993a1;text-transform:none;font-weight:600;}.cc-metric-value{font-size:24px;line-height:30px;font-weight:700;color:#18202b;}.cc-metric-sub{font-size:11px;color:#8993a1;}
-.cc-section:nth-of-type(3){background:transparent;border:0;box-shadow:none;padding:0;}.cc-table-wrap{border:1px solid #e6e9ee;border-radius:11px;overflow:auto;margin-top:4px;}.cc-table{font-size:12px;}.cc-table th{background:#f8f9fa;border-bottom:1px solid #e6e9ee;padding:11px 12px;text-transform:none;letter-spacing:0;font-size:11px;font-weight:600;color:#526071;}.cc-table td{height:54px;padding:10px 12px;border-bottom-color:#e6e9ee;}.cc-table th:first-child,.cc-table td:first-child{padding-left:14px;}.cc-table tbody tr:hover td{background:#fbfbfc;}.cc-vehicle{font-weight:700;}.cc-vehicle-meta{color:#8993a1;}.cc-state{padding:4px 8px;border-radius:999px;background:#edf3fa;color:#426b9c;font-size:10px;}.cc-state.warning{background:#fff6e4;color:#a86d17;}.cc-state.sold{background:#eaf7f1;color:#21815d;}
+.cc-section.cc-position{background:transparent;border:0;box-shadow:none;padding:0;}.cc-table-wrap{border:1px solid #e6e9ee;border-radius:11px;overflow:auto;margin-top:4px;}.cc-table{font-size:12px;}.cc-table th{background:#f8f9fa;border-bottom:1px solid #e6e9ee;padding:11px 12px;text-transform:none;letter-spacing:0;font-size:11px;font-weight:600;color:#526071;}.cc-table td{height:54px;padding:10px 12px;border-bottom-color:#e6e9ee;}.cc-table th:first-child,.cc-table td:first-child{padding-left:14px;}.cc-table tbody tr:hover td{background:#fbfbfc;}.cc-vehicle{font-weight:700;}.cc-vehicle-meta{color:#8993a1;}.cc-state{padding:4px 8px;border-radius:999px;background:#edf3fa;color:#426b9c;font-size:10px;}.cc-state.warning{background:#fff6e4;color:#a86d17;}.cc-state.sold{background:#eaf7f1;color:#21815d;}
 .cc-split{gap:18px;}.cc-split .cc-section{min-height:100%;}.cc-row{min-height:52px;padding:9px 0;border-bottom-color:#e6e9ee;}.cc-row-label{color:#526071;font-size:12px;}.cc-row-note{font-size:10px;color:#8993a1;}.cc-row-value{font-size:14px;color:#18202b;}.cc-provisional{background:#fff6e4;border-color:#efd59e;border-radius:999px;font-size:9px;}.cc-chart{height:190px;padding:14px 4px 0;}
 .cc-toolbar .chip{border-radius:999px;border:1px solid #e6e9ee;background:#fff;color:#526071;}.cc-toolbar .chip.active{background:#fbeded;border-color:#e9bfc0;color:#bd2d2f;}.cc-toolbar input{border-radius:9px;border-color:#d7dce3;}
 @media(max-width:1100px){.main{margin-left:0;}.content{padding:24px 24px 44px;}.cc-metrics{grid-template-columns:repeat(3,minmax(0,1fr));}}
@@ -840,6 +846,25 @@ body{background:#f5f6f8;color:#18202b;}
 @media(max-width:768px){.cc-command .cc-section-head{display:block;}.cc-command .cc-toolbar{justify-content:flex-start;margin-top:10px;overflow-x:auto;padding-bottom:2px;}.cc-command .cc-toolbar-group{flex-wrap:nowrap;}.cc-position-grid{grid-template-columns:1fr 1fr;}.cc-position-item{min-height:108px;padding:13px 12px;}.cc-position-item b{font-size:20px;line-height:25px;}.cc-interpretation-grid{gap:22px;}.cc-pulse-item b{font-size:17px;line-height:23px;}}
 @media(max-width:640px){.cc-section-head{display:block;}.cc-section-meta{margin-top:4px;text-align:left;}.cc-pulse{grid-template-columns:minmax(0,1fr) minmax(0,1fr);border:1px solid var(--separator);border-radius:10px;overflow:hidden;}.cc-pulse-item,.cc-pulse-item:first-child,.cc-pulse-item:last-child{padding:11px 12px;border-right:1px solid var(--separator);border-bottom:1px solid var(--separator);}.cc-pulse-item:nth-child(2n){border-right:0;}.cc-pulse-item:nth-last-child(-n+2){border-bottom:0;}.cc-pulse-item span{display:block;white-space:normal;overflow-wrap:anywhere;word-break:break-word;}.cc-pulse-item b{font-size:16px;line-height:21px;}.cc-position-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:10px;}.cc-position-item{min-height:100px;padding:11px 10px;}.cc-position-item:nth-child(2){border-right:0;}.cc-position-item:nth-child(odd){border-right:1px solid var(--separator);}.cc-position-item:nth-child(-n+2){border-bottom:1px solid var(--separator);}.cc-position-item b{font-size:17px;line-height:22px;}.cc-position-item span{font-size:9px;line-height:13px;}.cc-position-item small{font-size:9px;line-height:13px;}.cc-interpretation-grid{grid-template-columns:1fr;gap:14px;}.cc-performance .cc-chart{height:165px;}.cc-attention-row{grid-template-columns:minmax(0,1fr) auto;}.cc-attention-detail{grid-column:1/2;}.cc-attention-action{grid-column:2;grid-row:1/3;}}
 
+/* UI-R3-C1: compose when the Command Center itself has enough width. */
+#cmdCenter{container-type:inline-size;}
+@container (min-width:1450px){
+  .cc{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,3fr) minmax(0,9fr);column-gap:0;row-gap:22px;align-items:start;}
+  .cc-section{width:auto;}
+  .cc-summary{grid-column:1/-1;grid-row:1;}
+  .cc-command{grid-column:1/-1;grid-row:2;}
+  .cc-attention{grid-column:1;grid-row:3;margin-right:11px;}
+  .cc-position{grid-column:2/-1;grid-row:3;margin-left:11px;}
+  .cc-interpretation{grid-column:1/3;grid-row:4;margin-right:11px;}
+  .cc-performance{grid-column:3;grid-row:4;margin-left:11px;}
+  .cc-position-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .cc-position-item{min-height:96px;padding:12px 14px;}
+  .cc-position-item:nth-child(2){border-right:0;}
+  .cc-position-item:nth-child(-n+2){border-bottom:1px solid var(--separator);}
+  .cc-interpretation-block,.cc-row-value{min-width:0;}
+  .cc-row-value{overflow-wrap:anywhere;}
+}
+
 /* UI-4 · INVENTORY EXPERIENCE */
 .inventory-page.active{display:block;}
 .inventory-page .inventory-header{margin-bottom:16px;}
@@ -853,6 +878,7 @@ body{background:#f5f6f8;color:#18202b;}
 .inventory-tabs .chip span{color:#8993a1;font-variant-numeric:tabular-nums;}
 .inventory-actions{display:flex;gap:6px;margin-left:auto;}
 .inventory-actions .btn-sm{height:36px;padding:0 11px;}
+.inventory-more-toggle{display:none;}
 .inventory-secondary-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:8px 0 14px;border-bottom:1px solid #e6e9ee;color:#8993a1;font-size:11px;margin-bottom:14px;}
 .inventory-aging-label{margin-left:12px;}
 .inventory-position{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(130px,1fr));gap:10px;align-items:stretch;margin:16px 0;}
@@ -880,13 +906,28 @@ body{background:#f5f6f8;color:#18202b;}
 .inventory-page .btn-sm{min-height:34px;border-radius:8px;padding-inline:10px;}.inventory-page .empty-state{padding:28px 20px;border:1px dashed #d7dce3;border-radius:12px;background:#fff;}
 @media(max-width:1024px){.inventory-position{grid-template-columns:repeat(3,minmax(0,1fr));}.inventory-position-lead{grid-column:1/-1;}.inventory-actions{margin-left:0;}.inventory-page .unit-item{padding:16px;}}
 @media(max-width:768px){.inventory-toolbar{align-items:stretch;}.inventory-search{flex-basis:100%;}.inventory-tabs{order:2;}.inventory-actions{order:3;}.inventory-secondary-controls{overflow-x:auto;flex-wrap:nowrap;padding-bottom:12px;}.inventory-aging-label{margin-left:8px;}.inventory-page .unit-top{align-items:flex-start;}.inventory-page .unit-actions{flex-wrap:wrap;}}
-@media(max-width:640px){.inventory-page .inventory-header{margin-bottom:12px;}.inventory-page .page-header-actions{margin-top:10px;}.inventory-toolbar{gap:8px;margin-bottom:6px;}.inventory-tabs{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;}.inventory-tabs .chip{flex:none;}.inventory-actions{width:100%;}.inventory-actions .btn-sm{flex:1;}.inventory-secondary-controls{margin-inline:-14px;padding-inline:14px;}.inventory-page .unit-item{padding:14px;border-radius:12px;}.inventory-page .unit-top{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;}.inventory-page .unit-actions{width:100%;justify-content:flex-start;}.inventory-page .unit-actions .btn-sm{flex:0 0 auto;}.inventory-page .unit-modals{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.inventory-page .unit-stats{gap:8px 12px;}.inventory-page .unit-stats>div{min-width:calc(50% - 8px);}.inventory-page .empty-state{padding:24px 14px;}}
+@media(max-width:640px){.inventory-page .inventory-header{margin-bottom:12px;}.inventory-page .page-header-actions{margin-top:10px;}.page-header-actions .inventory-header-refresh{display:none;}.inventory-toolbar{gap:8px;margin-bottom:6px;}.inventory-tabs{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;}.inventory-tabs .chip{flex:none;}.inventory-more-toggle{order:3;display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--separator-strong);border-radius:var(--radius-control);background:var(--surface-primary);color:var(--text-primary);font:600 12px/18px 'DM Sans',sans-serif;text-align:left;cursor:pointer;}.inventory-more-toggle small{color:var(--text-muted);font-size:11px;font-weight:500;text-align:right;}.inventory-more-toggle[aria-expanded="true"]{border-color:var(--brand-accent);}.inventory-actions{order:4;width:100%;}.inventory-actions .btn-sm{flex:1;}.inventory-actions .inventory-refresh{flex:0 0 44px;padding:0;font-size:20px;}.inventory-refresh-label{display:none;}#sec-unit:not(.inventory-more-open) .inventory-actions,#sec-unit:not(.inventory-more-open) .inventory-secondary-controls{display:none;}.inventory-secondary-controls{margin-inline:-14px;padding-inline:14px;}.inventory-page .unit-item{padding:14px;border-radius:12px;}.inventory-page .unit-top{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;}.inventory-page .unit-actions{width:100%;justify-content:flex-start;}.inventory-page .unit-actions .btn-sm{flex:0 0 auto;}.inventory-page .unit-modals{grid-template-columns:repeat(2,minmax(0,1fr))!important;}.inventory-page .unit-stats{gap:8px 12px;}.inventory-page .unit-stats>div{min-width:calc(50% - 8px);}.inventory-page .empty-state{padding:24px 14px;}}
 
 /* UI-R1E · Reports analytical workspace */
 .reports-page{min-width:0;}.reports-page.active{display:block;}.reports-header{margin-bottom:18px;}.reports-kicker{display:block;font-size:10px;line-height:15px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--brand-accent);}.reports-controls{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:18px;padding:16px 18px;background:var(--surface-primary);border:1px solid var(--separator);border-radius:var(--radius-panel);}.reports-controls h2,.reports-section-head h2{margin-top:2px;font-size:18px;line-height:25px;font-weight:700;letter-spacing:-.015em;}.reports-controls p,.reports-section-head p,.reports-inventory-handoff p{margin-top:2px;font-size:11.5px;line-height:18px;color:var(--text-muted);}.reports-period-controls{display:flex;align-items:flex-end;justify-content:flex-end;gap:12px;flex-wrap:wrap;}.reports-presets{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;}.reports-presets .chip{white-space:nowrap;}.reports-custom-period{display:flex;align-items:flex-end;gap:6px;color:var(--text-muted);}.reports-custom-period label{display:grid;gap:3px;font-size:10px;line-height:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);}.reports-custom-period input{width:140px;min-height:36px;padding:6px 8px;border:1px solid var(--separator-strong);border-radius:var(--radius-control);background:var(--surface-primary);color:var(--text-primary);font-size:12px;}.reports-section{margin-bottom:18px;padding:20px;background:var(--surface-primary);border:1px solid var(--separator);border-radius:var(--radius-panel);min-width:0;}.reports-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:16px;}.reports-period-badge{flex:none;padding:5px 8px;border:1px solid var(--separator);border-radius:var(--radius-control);background:var(--surface-secondary);font-size:11px;font-weight:600;color:var(--text-secondary);}.reports-overview{padding-bottom:0;overflow:hidden;}.reports-overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 -20px;}.reports-overview-grid .ih-card{min-width:0;padding:15px 20px 18px;border:0;border-top:1px solid var(--separator);border-right:1px solid var(--separator);border-radius:0;background:transparent;color:var(--text-primary);}.reports-overview-grid .ih-card:last-child{border-right:0;}.reports-overview-grid .ihc-label,.reports-overview-grid .ihc-sub{color:var(--text-muted);}.reports-overview-grid .ihc-value{font-size:22px;line-height:29px;color:var(--text-primary);}.reports-trend-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,.75fr);gap:16px;}.reports-chart-primary,.reports-chart-secondary{min-width:0;padding:14px;border:1px solid var(--separator);border-radius:var(--radius-panel);background:#FAF9F7;}.reports-chart-primary .chart-wrap{height:300px;}.reports-chart-secondary .chart-wrap{height:240px;}.reports-chart-label{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px;font-size:12px;line-height:18px;font-weight:700;color:var(--text-secondary);}.reports-chart-label span{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);}.reports-monthly-detail{margin-top:12px;padding-top:10px;border-top:1px solid var(--separator);}.reports-month-row{display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:12px;padding:7px 0;border-bottom:1px solid var(--separator);font-size:11px;line-height:17px;}.reports-month-row:last-child{border-bottom:0;}.reports-month-row span:nth-child(2){color:var(--text-muted);overflow-wrap:anywhere;}.reports-month-row b{font-variant-numeric:tabular-nums;}.reports-segment-comparison{border:1px solid var(--separator);border-radius:var(--radius-panel);overflow:hidden;}.reports-segment-head,.reports-segment-row{display:grid;grid-template-columns:minmax(150px,1.2fr) repeat(2,minmax(120px,1fr));}.reports-segment-head{background:var(--surface-secondary);font-size:10px;line-height:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);}.reports-segment-head>*{padding:9px 14px;}.reports-segment-row{border-top:1px solid var(--separator);font-size:12px;line-height:18px;}.reports-segment-row>*{padding:12px 14px;}.reports-segment-row span{color:var(--text-secondary);}.reports-segment-row b{font-size:14px;font-variant-numeric:tabular-nums;}.reports-velocity-grid{display:grid;grid-template-columns:minmax(240px,.7fr) minmax(0,1.3fr);gap:16px;}.reports-velocity-summary{display:grid;align-content:start;border:1px solid var(--separator);border-radius:var(--radius-panel);overflow:hidden;}.reports-velocity-item{padding:14px 16px;border-bottom:1px solid var(--separator);}.reports-velocity-item:last-child{border-bottom:0;}.reports-velocity-item span{display:block;font-size:10px;line-height:15px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);}.reports-velocity-item b{display:block;margin-top:3px;font-size:18px;line-height:24px;font-variant-numeric:tabular-nums;}.reports-velocity-item small{display:block;margin-top:2px;font-size:11px;line-height:16px;color:var(--text-muted);}.reports-inventory-handoff{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:14px;padding:13px 15px;border-left:3px solid var(--info);background:var(--info-soft);}.reports-inventory-handoff strong{display:block;margin-top:2px;font-size:13px;}.reports-inventory-handoff .btn-sm{flex:none;}.reports-secondary{margin-bottom:18px;background:var(--surface-primary);border:1px solid var(--separator);border-radius:var(--radius-panel);}.reports-secondary summary{display:flex;align-items:center;justify-content:space-between;min-height:62px;padding:12px 20px;cursor:pointer;list-style:none;}.reports-secondary summary::-webkit-details-marker{display:none;}.reports-secondary summary::after{content:'＋';font-size:18px;color:var(--text-muted);}.reports-secondary[open] summary::after{content:'−';}.reports-secondary summary strong,.reports-secondary summary small{display:block;}.reports-secondary summary strong{font-size:14px;line-height:20px;}.reports-secondary summary small{font-size:11px;line-height:16px;font-weight:400;color:var(--text-muted);}.reports-secondary-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 20px 20px;border-top:1px solid var(--separator);}.reports-secondary-grid>div{min-width:0;padding-top:16px;}.reports-secondary-grid .chart-wrap{height:230px;}.reports-local-filter{display:flex;gap:4px;flex-wrap:wrap;}.reports-track .track-table{min-width:920px;}.reports-footnote{margin-top:10px;font-size:11px;line-height:17px;color:var(--text-muted);}
 @media(max-width:1024px){.reports-controls{align-items:flex-start;}.reports-period-controls{max-width:560px;}.reports-trend-grid{grid-template-columns:minmax(0,1.35fr) minmax(250px,.75fr);}.reports-velocity-grid{grid-template-columns:minmax(210px,.65fr) minmax(0,1.35fr);}}
 @media(max-width:768px){.reports-controls{display:block;}.reports-period-controls{justify-content:flex-start;max-width:none;margin-top:12px;}.reports-presets{justify-content:flex-start;}.reports-trend-grid,.reports-velocity-grid,.reports-secondary-grid{grid-template-columns:1fr;}.reports-chart-primary .chart-wrap{height:260px;}.reports-chart-secondary .chart-wrap{height:220px;}.reports-secondary-grid{gap:0;}.reports-overview-grid .ihc-value{font-size:19px;line-height:25px;}.reports-section-head{align-items:flex-start;}.reports-segment-head,.reports-segment-row{grid-template-columns:minmax(120px,1.1fr) repeat(2,minmax(100px,1fr));}}
 @media(max-width:640px){.reports-header{margin-bottom:12px;}.reports-controls,.reports-section{padding:15px 14px;margin-bottom:14px;}.reports-controls h2,.reports-section-head h2{font-size:16px;line-height:23px;}.reports-period-controls{display:block;}.reports-presets{display:flex;flex-wrap:nowrap;overflow-x:auto;margin-inline:-14px;padding:0 14px 6px;-webkit-overflow-scrolling:touch;}.reports-custom-period{margin-top:8px;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;}.reports-custom-period input{width:100%;min-width:0;min-height:44px;font-size:16px;}.reports-overview{padding-bottom:0;}.reports-overview-grid{grid-template-columns:1fr;margin:0 -14px;}.reports-overview-grid .ih-card{padding:12px 14px;border-right:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1px 12px;align-items:center;}.reports-overview-grid .ihc-value{grid-column:2;grid-row:1/3;text-align:right;}.reports-overview-grid .ihc-sub{grid-column:1;}.reports-section-head{display:block;}.reports-period-badge,.reports-local-filter{margin-top:10px;}.reports-local-filter{flex-wrap:nowrap;overflow-x:auto;}.reports-chart-primary,.reports-chart-secondary{padding:10px;}.reports-chart-primary .chart-wrap{height:235px;}.reports-chart-secondary .chart-wrap{height:200px;}.reports-month-row{grid-template-columns:72px minmax(0,1fr);gap:4px 8px;}.reports-month-row b{grid-column:2;text-align:left;}.reports-segment-comparison{overflow-x:auto;}.reports-segment-head,.reports-segment-row{min-width:440px;}.reports-inventory-handoff{align-items:flex-start;flex-direction:column;}.reports-inventory-handoff .btn-sm{width:100%;}.reports-secondary summary{padding:11px 14px;}.reports-secondary-grid{padding:0 14px 14px;}.reports-track .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}}
+
+/* R3-E: keep sold-unit identity inside the Track Record's own horizontal scroller. */
+@media(max-width:768px){
+  #trackTable :is(th,td):first-child{position:sticky;left:0;z-index:2;background:var(--surface-primary);box-shadow:1px 0 0 var(--separator-strong);}
+  #trackTable th:first-child{z-index:3;}
+  #trackTable tbody tr:hover td:first-child{background:#F8F7F4;}
+}
+@media(max-width:640px){
+  #trackTable :is(th,td):first-child{width:170px;min-width:170px;max-width:170px;white-space:normal;overflow-wrap:anywhere;}
+}
+@media(max-width:360px){
+  .reports-custom-period{grid-template-columns:minmax(0,1fr);gap:8px;}
+  .reports-custom-period>span{display:none;}
+}
+@media(max-width:340px){#trackTable :is(th,td):first-child{width:140px;min-width:140px;max-width:140px;}}
 
 /* UI-R1C · Capital & Funding structure */
 .funding-page{gap:24px;min-width:0;}.funding-page.active{display:grid;}.funding-page>.funding-section{margin:0;}
@@ -907,6 +948,29 @@ body{background:#f5f6f8;color:#18202b;}
 @media(max-width:1024px){.funding-orientation{grid-template-columns:1fr 1fr;}.funding-overview-item{border-left:0;border-top:1px solid var(--separator);}.funding-overview-item:nth-child(2),.funding-overview-item:nth-child(4){border-left:1px solid var(--separator);}.funding-section .ih-grid,.funding-section .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.funding-section .ih-card,.funding-section .kpi{border-right:0;border-bottom:1px solid var(--separator);padding:12px;}.funding-section .ih-card:nth-child(odd),.funding-section .kpi:nth-child(odd){border-right:1px solid var(--separator);}.funding-section .ih-card:nth-last-child(-n+2),.funding-section .kpi:nth-last-child(-n+2){border-bottom:0;}}
 @media(max-width:640px){.funding-page{gap:16px;}.funding-orientation{display:block;}.funding-orientation-intro,.funding-overview-item{padding:14px 16px;}.funding-overview-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;align-items:center;border-left:0!important;border-top:1px solid var(--separator);}.funding-overview-item b{margin:0;font-size:17px;line-height:22px;text-align:right;}.funding-overview-item small{grid-column:1/-1;}.funding-section-head{align-items:flex-start;padding:15px 16px 12px;}.funding-section-head h2{font-size:16px;line-height:23px;}.funding-section-head .btn-sm{flex:none;}.funding-section-body{padding:14px 16px 16px;}.funding-section .ih-grid,.funding-section .kpi-grid{grid-template-columns:1fr 1fr;gap:0;}.funding-section .ih-card,.funding-section .kpi,.funding-section .ih-card:first-child,.funding-section .kpi:first-child,.funding-section .ih-card:last-child,.funding-section .kpi:last-child{padding:10px;}.funding-section .ihc-label,.funding-section .kpi-label{overflow-wrap:anywhere;}.funding-section .ihc-value,.funding-section .kpi-value{font-size:16px!important;line-height:22px;}.funding-table .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}.funding-table .track-table{min-width:680px;}.funding-partner-table .track-table{min-width:1180px;}.funding-policy summary{padding:10px 16px;}.funding-policy-body{padding:0 16px 16px;}.funding-policy-toolbar{display:block;}.funding-policy-filters{margin-top:8px;}.funding-policy .track-table{min-width:620px;}}
 
+/* R3-D: retain record identity while inspecting financial columns inside each register. */
+.register-identity-detail{display:none;}
+@media(max-width:1600px){
+  #pcOverviewTable :is(th,td):first-child{position:sticky;left:0;z-index:2;background:var(--surface-primary);box-shadow:1px 0 0 var(--separator-strong);}
+  #pcOverviewTable th:first-child{z-index:3;}
+  #pcOverviewTable tbody tr:hover td:first-child{background:#F8F7F4;}
+}
+@media(max-width:768px){
+  :is(#founderCapTable,#modalDebtTable,#kasTable,#debtTable,#asetTable) :is(th,td):first-child{position:sticky;left:0;z-index:2;background:var(--surface-primary);box-shadow:1px 0 0 var(--separator-strong);}
+  :is(#founderCapTable,#modalDebtTable,#kasTable,#debtTable,#asetTable) th:first-child{z-index:3;}
+  :is(#founderCapTable,#modalDebtTable,#kasTable,#debtTable,#asetTable) tbody tr:hover td:first-child{background:#F8F7F4;}
+}
+@media(max-width:640px){
+  :is(#pcPolicyTable,#payTable,#lapPeriodTable) :is(th,td):first-child{position:sticky;left:0;z-index:2;background:var(--surface-primary);box-shadow:1px 0 0 var(--separator-strong);}
+  :is(#pcPolicyTable,#payTable,#lapPeriodTable) th:first-child{z-index:3;}
+  :is(#pcPolicyTable,#payTable,#lapPeriodTable) tbody tr:hover td:first-child{background:#F8F7F4;}
+  :is(#founderCapTable,#pcOverviewTable,#pcPolicyTable,#kasTable,#payTable,#asetTable) :is(th,td):first-child{width:150px;min-width:150px;max-width:150px;white-space:normal;overflow-wrap:anywhere;}
+  #pcOverviewTable :is(th,td):first-child{width:160px;min-width:160px;max-width:160px;}
+  #lapPeriodTable :is(th,td):first-child{width:170px;min-width:170px;max-width:170px;white-space:normal;overflow-wrap:anywhere;}
+  .register-identity-detail{display:block;margin-top:2px;font-size:11px;line-height:15px;font-weight:500;color:var(--text-secondary);}
+}
+@media(max-width:340px){#kasTable :is(th,td):first-child{width:130px;min-width:130px;max-width:130px;}}
+
 /* ═══════════ UI-R1F · SETTINGS + UNIT WORKFLOWS ═══════════ */
 .settings-page{max-width:1080px;margin:0 auto;}.settings-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-bottom:24px;padding:4px;background:var(--surface-secondary);border:1px solid var(--separator);border-radius:12px;}.settings-nav button{min-height:44px;padding:8px 12px;border:0;border-radius:8px;background:transparent;color:var(--text-secondary);font-size:13px;font-weight:600;cursor:pointer;}.settings-nav button.active{background:var(--surface-primary);color:var(--text-primary);box-shadow:0 1px 2px rgba(27,39,55,.07);}.settings-panel{display:none}.settings-panel.active{display:block}.settings-heading{margin-bottom:18px}.settings-heading span,.settings-kicker,.unit-form-kicker{font-size:10px;line-height:15px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-accent)}.settings-heading h2{margin:2px 0;font-size:20px;line-height:27px;font-weight:600}.settings-heading p,.settings-scope,.settings-help{font-size:12px;line-height:19px;color:var(--text-muted)}.settings-scope{margin-bottom:16px;padding:11px 14px;border-left:3px solid var(--info);background:var(--info-soft)}.settings-section{margin-bottom:18px;padding:20px;background:var(--surface-primary);border:1px solid var(--separator);border-radius:var(--radius-panel)}.settings-section-head{margin-bottom:16px}.settings-section-head h3{font-size:16px;line-height:23px;font-weight:600}.settings-section-head p{margin-top:2px;font-size:11.5px;line-height:18px;color:var(--text-muted)}.settings-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}.settings-fields .full{grid-column:1/-1}.settings-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:18px}.settings-reset{margin-top:18px;padding-top:14px;border-top:1px solid var(--separator)}.settings-reset button{color:var(--danger)}.settings-preview-state{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:11px;color:var(--warning);visibility:hidden}.settings-preview-state.show{visibility:visible}.settings-preview-state::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}.settings-accent{padding-top:14px;border-top:1px solid var(--separator)}.settings-accent summary{cursor:pointer;font-size:12px;font-weight:600;color:var(--text-secondary)}.settings-accent-body{margin-top:12px}.settings-sensitive{padding:12px 14px;border-left:3px solid var(--warning);background:var(--warning-soft);font-size:11.5px;line-height:18px;color:var(--text-secondary)}.settings-admin-group+.settings-admin-group{margin-top:18px;padding-top:18px;border-top:1px solid var(--separator)}.settings-check{display:flex;align-items:flex-start;gap:10px;min-height:44px;font-size:13px;color:var(--text-secondary);cursor:pointer}.settings-check input{width:20px;height:20px;margin-top:1px}.settings-account-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 12px;border:1px solid var(--separator);border-radius:var(--radius-control);margin-bottom:8px}.settings-account-row strong{display:block}.settings-account-row small{display:block;color:var(--text-muted)}.settings-maintenance{margin-top:18px;border:1px solid rgba(180,35,24,.35);border-radius:var(--radius-panel);background:var(--danger-soft)}.settings-maintenance summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:12px 16px;cursor:pointer;list-style:none;font-weight:600;color:var(--danger)}.settings-maintenance summary::-webkit-details-marker{display:none}.settings-maintenance summary::after{content:'+'}.settings-maintenance[open] summary::after{content:'−'}.settings-maintenance-body{padding:0 16px 16px}.settings-maintenance-body p{margin-bottom:12px;font-size:12px;line-height:19px;color:var(--text-secondary)}.audit-detail{white-space:normal;overflow-wrap:anywhere;min-width:240px;max-width:460px}.audit-scope{font-size:12px;line-height:19px;color:var(--text-muted)}
 .unit-dialog-overlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:flex-start;justify-content:center;padding:24px;background:rgba(15,20,30,.55);overflow:auto}.unit-dialog{display:flex;flex-direction:column;width:100%;max-height:calc(100dvh - 48px);background:var(--surface-primary);border:1px solid var(--separator);border-radius:var(--radius-dialog);box-shadow:var(--shadow-float);overflow:hidden}.unit-dialog.add{max-width:660px}.unit-dialog.edit{max-width:560px}.unit-dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:20px 22px 14px;border-bottom:1px solid var(--separator)}.unit-dialog-head>div{min-width:0}.unit-dialog-head p{overflow-wrap:anywhere}.unit-dialog-head h2{margin:2px 0 0;font-size:19px;line-height:25px}.unit-dialog-close{width:40px;height:40px;padding:0;flex:none}.unit-dialog-body{padding:18px 22px;overflow-y:auto}.unit-dialog-section{min-width:0;padding:15px;margin-bottom:12px;border:1px solid var(--separator);border-radius:var(--radius-panel)}.unit-dialog-section h3{margin-bottom:10px;font-size:14px;line-height:20px}.unit-dialog-section p{margin-top:7px;font-size:11px;line-height:17px;color:var(--text-muted);overflow-wrap:anywhere}.unit-dialog .fg,.settings-page .fg{min-width:0}.unit-dialog .fg input,.unit-dialog .fg select,.settings-page .fg input,.settings-page .fg select{width:100%;min-width:0}.unit-identity-grid{display:grid;grid-template-columns:2fr 1fr 1.1fr;gap:10px}.unit-funding-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.unit-funding-grid .partner-name{grid-column:1}.unit-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;background:var(--surface-secondary);border-radius:var(--radius-panel);overflow:hidden}.unit-summary-item{min-width:0;padding:12px;text-align:center;border-right:1px solid var(--separator)}.unit-summary-item:last-child{border-right:0}.unit-summary-item span{display:block;font-size:10px;line-height:15px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted)}.unit-summary-item b{display:block;margin-top:3px;font-size:15px;line-height:21px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}.unit-exposure{display:none;margin-top:10px;padding:8px 10px;background:var(--info-soft);font-size:11.5px;color:var(--text-secondary)}.unit-exposure.show{display:block}.unit-field-error{min-height:17px;margin-top:3px;font-size:11px;color:var(--danger)}.unit-dialog-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--separator);background:var(--surface-primary)}.unit-session-count{margin-right:auto;font-size:11px;color:var(--text-muted)}.unit-context{display:flex;align-items:center;gap:8px;margin-bottom:14px;padding:10px 12px;background:var(--surface-secondary);border-radius:var(--radius-control)}.unit-context strong{font-size:13px}.unit-context .badge{margin-left:auto}.unit-sold-note{margin-bottom:12px;padding:10px 12px;border-left:3px solid var(--warning);background:var(--warning-soft);font-size:11.5px;line-height:18px;color:var(--text-secondary)}
@@ -914,13 +978,17 @@ body{background:#f5f6f8;color:#18202b;}
 @media(max-width:768px){.settings-nav{display:none}.settings-fields{grid-template-columns:1fr}.settings-fields .full{grid-column:auto}.unit-dialog-overlay{padding:12px}.unit-dialog{max-height:calc(100dvh - 24px)}.unit-dialog-head,.unit-dialog-body,.unit-dialog-foot{padding-left:16px;padding-right:16px}.unit-identity-grid{grid-template-columns:1fr 1fr}.unit-identity-grid .unit-name-field{grid-column:1/-1}.unit-summary{grid-template-columns:1fr}.unit-summary-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;text-align:left;border-right:0;border-bottom:1px solid var(--separator)}.unit-summary-item:last-child{border-bottom:0}.unit-summary-item b{margin:0;text-align:right}.unit-funding-grid{grid-template-columns:1fr 1fr}.audit-detail{min-width:260px}.legacy-page-actions{bottom:72px}}
 @media(min-width:769px){.settings-mobile-select{display:none}}
 @media(max-width:640px){.settings-section{padding:16px}.settings-mobile-select{width:100%;min-height:44px;margin-bottom:16px;border:1px solid var(--separator-strong);border-radius:var(--radius-control);background:var(--surface-primary);padding:0 12px;font-size:16px}.unit-dialog-overlay{padding:0;align-items:stretch;overflow-x:hidden}.unit-dialog,.unit-dialog.add,.unit-dialog.edit{width:100vw;max-width:100vw;max-height:100dvh;border-radius:0;border:0}.unit-dialog-body{max-width:100vw;padding-top:14px;padding-bottom:20px;overflow-x:hidden}.unit-identity-grid,.unit-funding-grid{grid-template-columns:minmax(0,1fr)}.unit-identity-grid .unit-name-field,.unit-funding-grid .partner-name{grid-column:auto}.unit-dialog-foot{display:grid;grid-template-columns:minmax(0,1fr)}.unit-dialog-foot .unit-session-count{grid-row:1;width:100%;text-align:center}.unit-dialog-foot .unit-primary{grid-row:2;width:100%}.unit-dialog-foot .unit-secondary{grid-row:3;width:100%}.unit-dialog-foot .unit-cancel{grid-row:4;width:100%}.legacy-page-actions{display:grid;grid-template-columns:1fr;bottom:64px}}
+/* An empty or unavailable audit response is one status message, not a five-column register. */
+@media(max-width:640px){
+  #auditTable:has(tbody td[colspan]){min-width:0;}
+  #auditTable:has(tbody td[colspan]) thead{display:none;}
+  #auditTable tbody td[colspan]{white-space:normal;overflow-wrap:anywhere;}
+}
 .mobile-more [aria-current="page"]{font-weight:700;color:var(--brand-accent);background:var(--surface-secondary)}
 #mobileMoreButton{display:flex!important}
-#uceOverlay>div,#ufOverlay>div,#stOverlay>div{max-height:calc(100dvh - 48px);overflow:auto}
-@media(max-width:640px){#uceOverlay,#ufOverlay,#stOverlay{padding:0!important;overflow-x:hidden!important}#uceOverlay>div,#ufOverlay>div,#stOverlay>div{width:100vw!important;max-width:100vw!important;min-height:100dvh;max-height:100dvh;border-radius:0!important;padding:16px!important;overflow-x:hidden}#uceOverlay [style*="grid-template-columns"],#ufOverlay [style*="grid-template-columns"],#stOverlay [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}.inventory-filter-summary{min-height:18px}}
+@media(max-width:640px){#uceOverlay [style*="grid-template-columns"],#ufOverlay [style*="grid-template-columns"],#stOverlay [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}.inventory-filter-summary{min-height:18px}}
 
 /* UI-R2D · focused operational modal density and funding alignment */
-.cost-ledger-dialog{padding:18px!important;}
 .cost-ledger-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:-2px 0 8px;padding-bottom:10px;border-bottom:1px solid var(--separator);}
 .cost-ledger-head h2{margin:0;font-size:19px;line-height:25px;font-weight:700;letter-spacing:-.015em;color:var(--text-primary);}
 .cost-ledger-head p{margin:2px 0 0;font-size:11.5px;line-height:17px;color:var(--text-muted);}
@@ -934,19 +1002,22 @@ body{background:#f5f6f8;color:#18202b;}
 .cost-ledger-dialog .fg label{display:block;margin-bottom:4px;font-size:11px;line-height:15px;}
 .cost-ledger-dialog .fg input,.cost-ledger-dialog .fg select{min-height:36px;padding:7px 9px;font-size:12px;}
 .cost-ledger-summary{grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0 0 12px!important;overflow:hidden;border:1px solid var(--separator);border-radius:var(--radius-control);background:var(--surface-primary);}
-.cost-ledger-summary .ih-card{min-width:0;padding:9px 11px;background:var(--surface-primary);border-right:1px solid var(--separator);}
-.cost-ledger-summary .ih-card:last-child{border-right:0;background:var(--surface-secondary);}
-.cost-ledger-summary .ihc-label{margin:0 0 3px;font-size:9px;line-height:13px;letter-spacing:.035em;color:var(--text-muted);}
-.cost-ledger-summary .ihc-value{font-family:'DM Sans',sans-serif;font-size:14px;line-height:19px;font-weight:700;color:var(--text-primary);overflow-wrap:anywhere;}
-.cost-ledger-summary .ihc-sub{margin-top:1px;font-size:10px;line-height:14px;font-weight:400;color:var(--text-muted);}
+.cost-ledger-summary .kpi{min-width:0;min-height:0;padding:9px 11px;border:0;border-right:1px solid var(--separator);border-radius:0;background:var(--surface-primary);}
+.cost-ledger-summary .kpi::before{display:none;}
+.cost-ledger-summary .kpi:last-child{border-right:0;background:var(--surface-secondary);}
+.cost-ledger-summary .kpi-label{margin:0 0 3px;font-size:9px;line-height:13px;letter-spacing:.035em;color:var(--text-muted);}
+.cost-ledger-summary .kpi-value{font-family:'DM Sans',sans-serif;line-height:21px;font-weight:700;color:var(--text-primary);overflow-wrap:anywhere;}
+.cost-ledger-summary .kpi-sub{margin-top:1px;font-size:10px;line-height:14px;font-weight:400;color:var(--text-muted);}
 .cost-ledger-form-grid{gap:7px!important;}
+.cost-ledger-form-grid-secondary{display:grid;}
+.cost-ledger-optional-toggle{display:none;}
 .cost-ledger-submit-row{align-items:center;}
 .cost-ledger-submit-row #uceNote{min-height:36px!important;font-size:12px;}
 .cost-ledger-submit-row #uceSubmit{min-height:36px;padding:0 12px;white-space:nowrap;}
 .cost-ledger-note{margin:8px 0 0!important;}
 .cost-ledger-finance-note{padding:8px 10px;border-left:2px solid var(--info);background:var(--info-soft);border-radius:0 var(--radius-control) var(--radius-control) 0;}
 .cost-ledger-history-title{margin:14px 0 5px;padding-top:10px;border-top:1px solid var(--separator);font-size:13px;line-height:19px;font-weight:700;color:var(--text-primary);}
-.cost-ledger-history{max-height:240px;overflow:auto;border-top:1px solid var(--separator);}
+.cost-ledger-history{max-height:none;overflow-x:auto;border-top:1px solid var(--separator);}
 .cost-ledger-history .track-table th,.cost-ledger-history .track-table td{padding:7px 8px;font-size:11px;}
 .settlement-sale-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px!important;align-items:start!important;margin-top:10px;}
 .settlement-sale-grid .fg{display:grid;grid-template-rows:16px 16px 38px;row-gap:4px;min-width:0;}
@@ -978,7 +1049,47 @@ body{background:#f5f6f8;color:#18202b;}
 #founderCapTable td:first-child,#modalDebtTable td:nth-child(6){white-space:nowrap;}
 .funding-policy-toolbar p,.funding-liquidity-context{line-height:19px;}
 @media(max-width:1024px){#modalDebtKpi.funding-debt-summary{grid-template-columns:repeat(2,minmax(0,1fr));}#modalDebtKpi.funding-debt-summary .ih-card:nth-child(2){border-right:0;}#modalDebtKpi.funding-debt-summary .ih-card:nth-child(-n+2){border-bottom:1px solid var(--separator);}}
-@media(max-width:640px){.cost-ledger-dialog{padding:16px!important;}.cost-ledger-summary{grid-template-columns:1fr 1fr;}.cost-ledger-summary .ih-card{border-bottom:1px solid var(--separator);}.cost-ledger-summary .ih-card:last-child{grid-column:1/-1;border-bottom:0;}.cost-ledger-form-grid,.cost-ledger-form-grid-secondary{grid-template-columns:minmax(0,1fr)!important;}.cost-ledger-submit-row{align-items:stretch;flex-direction:column;}.cost-ledger-submit-row>*{width:100%;box-sizing:border-box;}.cost-ledger-history{max-height:42dvh;}.settlement-sale-grid{grid-template-columns:minmax(0,1fr)!important;}.settlement-sale-grid .fg{grid-template-rows:16px 16px 40px;}.funding-section .ih-grid,.funding-section .kpi-grid{grid-template-columns:1fr 1fr;}.funding-section .ih-card,.funding-section .kpi{min-height:78px;padding:9px!important;}.funding-section .ihc-label,.funding-section .kpi-label{min-height:0;}.funding-debt-summary .ih-card:nth-child(2){border-right:0;}}
+@media(max-width:640px){.cost-ledger-summary{grid-template-columns:1fr 1fr;}.cost-ledger-summary .kpi{padding:8px 9px;border-bottom:1px solid var(--separator);}.cost-ledger-summary .kpi:nth-child(2){border-right:0;}.cost-ledger-summary .kpi:last-child{grid-column:1/-1;border-bottom:0;}.cost-ledger-optional-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:44px;margin-top:8px;padding:8px 10px;border:1px solid var(--separator-strong);border-radius:var(--radius-control);background:var(--surface-primary);color:var(--text-secondary);font:600 12px/18px 'DM Sans',sans-serif;text-align:left;cursor:pointer;}.cost-ledger-optional-toggle::after{content:'+';font-size:18px;line-height:18px;}.cost-ledger-dialog.optional-open .cost-ledger-optional-toggle::after{content:'−';}.cost-ledger-dialog:not(.optional-open) #uceOptionalFields,.cost-ledger-dialog:not(.optional-open) #uceNote{display:none;}.cost-ledger-form-grid,.cost-ledger-form-grid-secondary{grid-template-columns:minmax(0,1fr)!important;}.cost-ledger-submit-row{align-items:stretch;flex-direction:column;}.cost-ledger-submit-row>*{width:100%;box-sizing:border-box;}.cost-ledger-dialog .cost-ledger-submit-row #uceSubmit{min-height:44px;}.settlement-sale-grid{grid-template-columns:minmax(0,1fr)!important;}.settlement-sale-grid .fg{grid-template-rows:16px 16px 40px;}.funding-section .ih-grid,.funding-section .kpi-grid{grid-template-columns:1fr 1fr;}.funding-section .ih-card,.funding-section .kpi{min-height:78px;padding:9px!important;}.funding-section .ihc-label,.funding-section .kpi-label{min-height:0;}.funding-debt-summary .ih-card:nth-child(2){border-right:0;}}
+/* UI-R3-B: shared overlay behavior; workflow content and desktop widths stay distinct. */
+.toast{z-index:10001;}
+.workflow-overlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(15,20,30,.55);overflow:hidden;overscroll-behavior:contain;}
+.workflow-overlay,.unit-dialog-overlay,#modalOverlay{top:var(--blocking-viewport-top,0px);bottom:auto;height:var(--blocking-viewport-height,100dvh);}
+.workflow-panel{display:flex;flex-direction:column;min-width:0;width:100%;max-height:calc(var(--blocking-viewport-height,100dvh) - 48px);padding:24px;border-radius:16px;background:var(--surface);box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden;}
+.workflow-panel.cost-ledger-dialog{max-width:640px;padding:18px;}.funding-dialog{max-width:660px;}.settlement-dialog{max-width:620px;}.partner-view-panel{max-width:480px;max-height:min(90vh,calc(var(--blocking-viewport-height,100dvh) - 48px));}
+.workflow-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:none;min-width:0;}
+.workflow-head>div:first-child{min-width:0;overflow-wrap:anywhere;}
+.workflow-body{min-width:0;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;padding-bottom:4px;}
+.workflow-body .table-scroll{max-width:100%;}
+.unit-dialog-overlay{overflow:hidden;overscroll-behavior:contain;}
+.unit-dialog{max-height:calc(var(--blocking-viewport-height,100dvh) - 48px);}
+.unit-dialog-body{min-height:0;overscroll-behavior:contain;}
+#modalOverlay .modal{display:flex;flex-direction:column;overflow:hidden;max-height:calc(var(--blocking-viewport-height,100dvh) - 40px);}
+.legacy-sale-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:none;margin-bottom:14px;}
+.legacy-sale-head h2{margin-bottom:0;}
+.legacy-sale-body{min-height:0;overflow-y:auto;overscroll-behavior:contain;}
+#modalOverlay .modal-btns{flex:none;padding-top:8px;}
+@media(max-width:768px){
+  .unit-dialog{max-height:calc(var(--blocking-viewport-height,100dvh) - 24px);}
+  .inventory-tabs .chip,.inventory-secondary-controls .chip,.inventory-actions .btn-sm,.inventory-page .unit-actions .btn-sm,.cost-ledger-filters .chip,.cost-ledger-dialog .fg input,.cost-ledger-dialog .fg select,#uceSearch,#uceNote,#uceSubmit,.settlement-sale-grid .fg input,.cc-command .cc-toolbar .chip,.cc-command .cc-toolbar input,.finance-local-tab,.workflow-head .btn-sm,.legacy-sale-head .btn-sm{min-height:44px;}
+  .cost-ledger-dialog .fg input,.cost-ledger-dialog .fg select,#uceNote,.settlement-sale-grid .fg input{font-size:16px;}
+  .cc-command .cc-toolbar input{height:44px;font-size:16px;}
+  .settlement-sale-grid .fg{grid-template-rows:16px 16px 44px;}
+  .workflow-head .btn-sm,.legacy-sale-head .btn-sm,.unit-dialog-close{min-width:44px;width:44px;height:44px;flex:none;}
+}
+@media(max-width:640px){
+  .workflow-overlay{align-items:stretch;padding:0;}
+  .workflow-panel{width:100%;max-width:none;max-height:none;height:100%;padding:16px 16px calc(16px + env(safe-area-inset-bottom));border-radius:0;}
+  .workflow-panel.cost-ledger-dialog{max-width:none;padding:16px 16px calc(16px + env(safe-area-inset-bottom));}
+  .unit-dialog-overlay{height:var(--blocking-viewport-height,100dvh);}
+  .unit-dialog,.unit-dialog.add,.unit-dialog.edit{height:100%;max-height:none;}
+  .unit-dialog-foot{padding-bottom:calc(14px + env(safe-area-inset-bottom));}
+  #modalOverlay{padding:12px;}
+  #modalOverlay .modal{width:100%;max-width:400px;max-height:100%;padding:16px 16px calc(16px + env(safe-area-inset-bottom));}
+  #uceSearch{font-size:16px!important;}
+  .blocking-short-viewport .unit-dialog{overflow-y:auto;}
+  .blocking-short-viewport .unit-dialog-body{overflow:visible;flex:none;}
+  .blocking-short-viewport .unit-dialog-head{position:sticky;top:0;z-index:1;background:var(--surface-primary);}
+}
 </style>
 </head>
 <body>
@@ -1001,8 +1112,9 @@ body{background:#f5f6f8;color:#18202b;}
 </div>
 
 <div class="overlay" id="modalOverlay" role="presentation">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="legacySaleTitle">
-    <h2 id="legacySaleTitle">Tandai Terjual</h2>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="legacySaleTitle" tabindex="-1">
+    <div class="legacy-sale-head"><h2 id="legacySaleTitle">Tandai Terjual</h2><button class="btn-sm" aria-label="Close Legacy Sale" onclick="closeModal()">✕</button></div>
+    <div class="legacy-sale-body">
     <p style="font-size:13px;color:var(--text2);margin-bottom:14px">Masukkan harga jual dan tanggal:</p>
     <input type="number" id="modalHarga" placeholder="Harga jual (Rp)" style="margin-bottom:10px" oninput="recalcTerjualDist()">
     <input type="date" id="modalTglJual" style="margin-bottom:12px" onchange="recalcTerjualDist()">
@@ -1030,6 +1142,7 @@ body{background:#f5f6f8;color:#18202b;}
     <div style="font-size:11px;color:var(--text3);margin-bottom:8px">Sisa dibagi: <b id="mdSisa">—</b></div>
     <div id="stakeRows"></div>
     <div id="stakeTotal" style="font-size:12px;font-weight:600;margin:6px 0 4px"></div>
+    </div>
 
     <div class="modal-btns">
       <button class="cancel" onclick="closeModal()">Batal</button>
@@ -1290,9 +1403,10 @@ body{background:#f5f6f8;color:#18202b;}
             <button class="chip" data-lifecycle="active" onclick="setInventoryLifecycle('active')">Active <span id="unitCountActive"></span></button>
             <button class="chip" data-lifecycle="sold" onclick="setInventoryLifecycle('sold')">Sold <span id="unitCountSold"></span></button>
           </div>
-          <div class="inventory-actions"><button class="btn-sm" onclick="loadUnits()">↻ Refresh</button><button class="btn-sm role-internal" onclick="openCostLedger()">Cost Ledger</button><button class="btn-sm role-internal" onclick="openSettle()">Settle</button></div>
+          <button class="inventory-more-toggle" id="inventoryMoreToggle" type="button" aria-expanded="false" aria-controls="inventoryActions inventorySecondaryControls" onclick="toggleInventoryMoreControls()"><span>Filters &amp; workflows</span><small id="inventoryMoreState">Ready · Type · Tools</small></button>
+          <div class="inventory-actions" id="inventoryActions"><button class="btn-sm inventory-refresh" aria-label="Refresh inventory" onclick="loadUnits()"><span aria-hidden="true">↻</span><span class="inventory-refresh-label"> Refresh</span></button><button class="btn-sm role-internal" onclick="openCostLedger()">Cost Ledger</button><button class="btn-sm role-internal" onclick="openSettle()">Settle</button></div>
         </div>
-        <div class="inventory-secondary-controls"><span class="filter-label">Operational</span><button class="chip" data-ready="true" aria-pressed="false" onclick="toggleReadyFilter()">Ready <span id="unitCountReady"></span></button><span class="filter-label">Type</span><button class="chip active" data-type="all" onclick="setInventoryType('all')">All</button><button class="chip" data-type="Mobil" onclick="setInventoryType('Mobil')">Mobil</button><button class="chip" data-type="Motor" onclick="setInventoryType('Motor')">Motor</button><span class="filter-label inventory-aging-label">Aging</span><button class="chip active" data-ag="all" onclick="setAgingFilter('all')">All</button><button class="chip" data-ag="1" onclick="setAgingFilter('1')">0–30d</button><button class="chip" data-ag="2" onclick="setAgingFilter('2')">31–60d</button><button class="chip" data-ag="3" onclick="setAgingFilter('3')">61–90d</button><button class="chip" data-ag="4" onclick="setAgingFilter('4')">90+d</button><button class="btn-sm" id="inventoryResetFilters" onclick="resetInventoryFilters()" hidden>Reset Filters</button></div>
+        <div class="inventory-secondary-controls" id="inventorySecondaryControls"><button class="btn-sm" id="inventoryResetFilters" onclick="resetInventoryFilters()" hidden>Reset Filters</button><span class="filter-label">Operational</span><button class="chip" data-ready="true" aria-pressed="false" onclick="toggleReadyFilter()">Ready <span id="unitCountReady"></span></button><span class="filter-label">Type</span><button class="chip active" data-type="all" onclick="setInventoryType('all')">All</button><button class="chip" data-type="Mobil" onclick="setInventoryType('Mobil')">Mobil</button><button class="chip" data-type="Motor" onclick="setInventoryType('Motor')">Motor</button><span class="filter-label inventory-aging-label">Aging</span><button class="chip active" data-ag="all" onclick="setAgingFilter('all')">All</button><button class="chip" data-ag="1" onclick="setAgingFilter('1')">0–30d</button><button class="chip" data-ag="2" onclick="setAgingFilter('2')">31–60d</button><button class="chip" data-ag="3" onclick="setAgingFilter('3')">61–90d</button><button class="chip" data-ag="4" onclick="setAgingFilter('4')">90+d</button></div>
         <div id="inventoryFilterSummary" class="inventory-position-note" aria-live="polite"></div>
         <div id="inventoryPosition" class="inventory-position"></div>
         <div id="inventoryAttention" class="inventory-attention" hidden></div>
@@ -1833,7 +1947,6 @@ body{background:#f5f6f8;color:#18202b;}
       <!-- ═══════════ AUDIT TRAIL ═══════════ -->
 
   </div>
-  </div>
 
   <!-- ═══════════ MOBILE BOTTOM NAV ═══════════ -->
   <nav class="bottom-nav" id="bottomNav">
@@ -1844,9 +1957,17 @@ body{background:#f5f6f8;color:#18202b;}
   </nav>
   <div class="mobile-more-backdrop" id="mobileMoreBackdrop" onclick="closeMobileMore(true)"></div>
   <div class="mobile-more" id="mobileMore">
-    <button class="role-internal" data-more-destination="funding" onclick="selectMobileMoreDestination('funding')">Capital &amp; Funding</button>
-    <button class="role-internal" data-more-destination="analitik" onclick="selectMobileMoreDestination('analitik')">Reports</button>
-    <button data-more-destination="pengaturan" onclick="selectMobileMoreDestination('pengaturan')">Settings</button>
+    <div class="mobile-more-label">Navigation</div>
+    <div class="mobile-more-links">
+      <button class="role-internal" data-more-destination="funding" onclick="selectMobileMoreDestination('funding')">Capital &amp; Funding</button>
+      <button class="role-internal" data-more-destination="analitik" onclick="selectMobileMoreDestination('analitik')">Reports</button>
+      <button data-more-destination="pengaturan" onclick="selectMobileMoreDestination('pengaturan')">Settings</button>
+    </div>
+    <div class="mobile-more-account">
+      <div class="mobile-more-label">Account</div>
+      <div class="mobile-more-account-identity"><strong id="mobileAccountUser"></strong><span id="mobileAccountRole"></span></div>
+      <button class="mobile-more-logout" onclick="doLogout()">Logout</button>
+    </div>
   </div>
 </div>
 
@@ -1892,6 +2013,55 @@ function captureSectionScroll(){const s=APP_STATE.currentSection;if(s&&APP_STATE
 function captureWorkflowOrigin(){WORKFLOW_ORIGIN={section:APP_STATE.currentSection||'unit',scrollY:window.scrollY||0,focus:document.activeElement};return WORKFLOW_ORIGIN;}
 function restoreWorkflowFocus(origin){const target=origin&&origin.focus;if(target&&document.contains(target)){target.focus();return;}const title=document.getElementById('topbarTitle');if(title){title.setAttribute('tabindex','-1');title.focus();}}
 function singletonOverlay(id){const existing=document.getElementById(id);if(existing){const dialog=existing.querySelector('[role="dialog"]')||existing;dialog.focus?.();return existing;}return null;}
+const BLOCKING_OVERLAYS=new Set();
+let BLOCKING_PAGE_STATE=null;
+function syncBlockingViewport(){
+  if(!BLOCKING_OVERLAYS.size)return;
+  const view=window.visualViewport;
+  const height=Math.round(view?.height||window.innerHeight);
+  document.documentElement.style.setProperty('--blocking-viewport-height',height+'px');
+  document.documentElement.style.setProperty('--blocking-viewport-top',Math.round(view?.offsetTop||0)+'px');
+  document.documentElement.classList.toggle('blocking-short-viewport',height<600);
+}
+function activateBlockingOverlay(overlay){
+  if(BLOCKING_OVERLAYS.has(overlay))return;
+  if(!BLOCKING_OVERLAYS.size){
+    const body=document.body;
+    BLOCKING_PAGE_STATE={x:window.scrollX,y:window.scrollY,position:body.style.position,top:body.style.top,left:body.style.left,width:body.style.width,overflow:body.style.overflow,rootOverflow:document.documentElement.style.overflow};
+    body.style.position='fixed';body.style.top=-BLOCKING_PAGE_STATE.y+'px';body.style.left=-BLOCKING_PAGE_STATE.x+'px';body.style.width='100%';body.style.overflow='hidden';
+    document.documentElement.style.overflow='hidden';
+    window.addEventListener('resize',syncBlockingViewport);
+    window.visualViewport?.addEventListener('resize',syncBlockingViewport);
+    window.visualViewport?.addEventListener('scroll',syncBlockingViewport);
+  }
+  BLOCKING_OVERLAYS.add(overlay);syncBlockingViewport();
+}
+function deactivateBlockingOverlay(overlay){
+  if(!BLOCKING_OVERLAYS.delete(overlay)||BLOCKING_OVERLAYS.size)return;
+  window.removeEventListener('resize',syncBlockingViewport);
+  window.visualViewport?.removeEventListener('resize',syncBlockingViewport);
+  window.visualViewport?.removeEventListener('scroll',syncBlockingViewport);
+  const saved=BLOCKING_PAGE_STATE;BLOCKING_PAGE_STATE=null;
+  const body=document.body;
+  body.style.position=saved.position;body.style.top=saved.top;body.style.left=saved.left;body.style.width=saved.width;body.style.overflow=saved.overflow;
+  document.documentElement.style.overflow=saved.rootOverflow;
+  document.documentElement.style.removeProperty('--blocking-viewport-height');
+  document.documentElement.style.removeProperty('--blocking-viewport-top');
+  document.documentElement.classList.remove('blocking-short-viewport');
+  window.scrollTo(saved.x,saved.y);
+}
+function removeBlockingOverlay(overlay){overlay.remove();deactivateBlockingOverlay(overlay);}
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Tab'||!BLOCKING_OVERLAYS.size)return;
+  const overlay=Array.from(BLOCKING_OVERLAYS).at(-1);
+  const controls=Array.from(overlay.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),a[href],[tabindex]:not([tabindex="-1"])'))
+    .filter(el=>el.getClientRects().length&&getComputedStyle(el).visibility!=='hidden');
+  if(!controls.length){e.preventDefault();overlay.querySelector('[role="dialog"]')?.focus();return;}
+  const first=controls[0],last=controls[controls.length-1];
+  if(!overlay.contains(document.activeElement)||document.activeElement===overlay.querySelector('[role="dialog"]')){e.preventDefault();(e.shiftKey?last:first).focus();}
+  else if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+});
 
 // ═══════════ RBAC (PHASE 1 & 8) ═══════════
 // Peran ditentukan dari username login. partner = Panji/Pandu (akses penuh internal).
@@ -1920,6 +2090,10 @@ function applyRBAC(){
   document.querySelectorAll('.role-investor').forEach(el=>el.classList.toggle('hide-role',!investor));
   const rb=document.getElementById('sbRole');
   if(rb)rb.textContent=myRole().replace('_',' ');
+  const mobileUser=document.getElementById('mobileAccountUser');
+  if(mobileUser)mobileUser.textContent=document.getElementById('sbUser').textContent;
+  const mobileRole=document.getElementById('mobileAccountRole');
+  if(mobileRole)mobileRole.textContent=myRole().replace('_',' ');
 }
 
 const fmtRp = n => 'Rp'+Math.round(n).toLocaleString('id-ID');
@@ -2003,6 +2177,7 @@ async function doLogin(){
   btn.disabled=false; btn.textContent='Masuk';
 }
 function doLogout(){
+  closeMobileMore();
   sessionStorage.removeItem('pm_session'); currentUser=null; currentRole=null; adminUnlocked=false;
   document.getElementById('dashWrap').style.display='none';
   document.getElementById('loginWrap').style.display='flex';
@@ -2190,7 +2365,7 @@ function showSection(requested,options){
   document.getElementById('topbarTitle').textContent=titles[s]||'Dashboard';
   document.getElementById('pageContext').textContent=contexts[s]||'';
   const headerActions=document.getElementById('pageHeaderActions');
-  if(headerActions)headerActions.innerHTML=s==='home'?'<button class="btn-primary" style="width:auto;margin:0" onclick="openUnitCreate()">Tambah Unit</button>':s==='unit'?'<button class="btn-sm" onclick="loadUnits()">Refresh</button><button class="btn-primary role-internal" style="width:auto;margin:0" onclick="openUnitCreate()">Tambah Unit</button>':s==='analitik'?'<button class="btn-sm" onclick="exportInsightPDF()">Export / Print</button>':'';
+  if(headerActions)headerActions.innerHTML=s==='home'?'<button class="btn-primary" style="width:auto;margin:0" onclick="openUnitCreate()">Tambah Unit</button>':s==='unit'?'<button class="btn-sm inventory-header-refresh" onclick="loadUnits()">Refresh</button><button class="btn-primary role-internal" style="width:auto;margin:0" onclick="openUnitCreate()">Tambah Unit</button>':s==='analitik'?'<button class="btn-sm" onclick="exportInsightPDF()">Export / Print</button>':'';
   document.getElementById('globalMetrics').style.display='none';
   closeSidebar();
   closeMobileMore();
@@ -2678,6 +2853,13 @@ function syncInventoryFilterControls(){
   const search=document.getElementById('unitSearch');if(search&&search.value!==s.query)search.value=s.query;
   const active=!!(s.query||s.lifecycle!=='all'||s.readyOnly||s.vehicleType!=='all'||s.aging!=='all');
   const reset=document.getElementById('inventoryResetFilters');if(reset)reset.hidden=!active;
+  const extra=[s.readyOnly,s.vehicleType!=='all',s.aging!=='all'].filter(Boolean).length;
+  const moreState=document.getElementById('inventoryMoreState');if(moreState)moreState.textContent=extra?`${extra} filter${extra===1?'':'s'} active`:'Ready · Type · Tools';
+}
+function toggleInventoryMoreControls(){
+  const section=document.getElementById('sec-unit'),button=document.getElementById('inventoryMoreToggle');
+  const open=section.classList.toggle('inventory-more-open');
+  button.setAttribute('aria-expanded',String(open));
 }
 function setInventoryLifecycle(v){APP_STATE.inventory.lifecycle=['all','active','sold'].includes(v)?v:'all';renderUnits();}
 function setInventoryType(v){APP_STATE.inventory.vehicleType=['all','Mobil','Motor'].includes(v)?v:'all';renderUnits();}
@@ -2910,11 +3092,12 @@ function openTerjualModal(id){
   document.getElementById('modalKas').placeholder='Rp';
   buildStakeRows();
   recalcTerjualDist();
-  document.getElementById('modalOverlay').classList.add('show');
-  setTimeout(()=>document.getElementById('modalHarga').focus(),100);
+  const overlay=document.getElementById('modalOverlay');
+  overlay.classList.add('show');activateBlockingOverlay(overlay);
+  setTimeout(()=>{if(overlay.classList.contains('show'))document.getElementById('modalHarga').focus();},100);
 }
 function legacySaleDirty(){return !!(document.getElementById('modalHarga').value||document.getElementById('modalKas').value);}
-function closeModal(force=false){if(LEGACY_SALE_SUBMITTING)return;if(!force&&legacySaleDirty()&&!confirm('Batalkan data penjualan yang belum disimpan?'))return;document.getElementById('modalOverlay').classList.remove('show');pendingTerjualId=null;if(LEGACY_SALE_RETURN_FOCUS&&document.contains(LEGACY_SALE_RETURN_FOCUS))LEGACY_SALE_RETURN_FOCUS.focus();}
+function closeModal(force=false){if(LEGACY_SALE_SUBMITTING)return;if(!force&&legacySaleDirty()&&!confirm('Batalkan data penjualan yang belum disimpan?'))return;const overlay=document.getElementById('modalOverlay');overlay.classList.remove('show');deactivateBlockingOverlay(overlay);pendingTerjualId=null;if(LEGACY_SALE_RETURN_FOCUS&&document.contains(LEGACY_SALE_RETURN_FOCUS))LEGACY_SALE_RETURN_FOCUS.focus();}
 // Keuntungan yang dibagi = Harga − Total Modal − Fee Partner tetap
 function terjualBersih(){
   const u=units.find(x=>x.id===pendingTerjualId);
@@ -3635,13 +3818,13 @@ async function renderCommandCenter(){
 
     <section class="cc-section cc-command"><div class="cc-section-head"><div><div class="cc-section-title">Owner Command Center</div><div class="cc-section-kicker">Posisi &amp; kinerja periode</div></div><div class="cc-toolbar"><div class="cc-toolbar-group"><span class="cc-toolbar-label">Periode</span>${['month','quarter','ytd','year','custom'].map(p=>`<button class="chip ${CC_PERIOD===p?'active':''}" data-cc-period="${p}" onclick="ccSetPeriod('${p}')">${lbl[p]}</button>`).join('')}</div><div class="cc-toolbar-group"><span class="cc-toolbar-label">As-of</span><input aria-label="As-of date" type="date" value="${asof}" onchange="ccSetAsof(this.value)"></div></div></div><p class="cc-context">Periode mengubah metrik kinerja. As-of mengubah metrik posisi.</p></section>
 
+    <section class="cc-section cc-attention"><div class="cc-section-head"><div><div class="cc-section-title">Units requiring attention</div><div class="cc-section-kicker">Decision queue · ${unitAttention.length} unit${unitAttention.length===1?'':'s'}</div></div><button class="cc-link" onclick="showSection('unit')">Open Inventory →</button></div>${unitAttention.length?unitAttention.map(r=>`<div class="cc-attention-row"><div class="cc-attention-name">${esc(r.u.nama)}</div><div class="cc-attention-detail">${r.reasons.map(x=>x[0]).join(' · ')} · ${r.hold} hari</div><button class="cc-attention-action" onclick="showSection('unit')">Review →</button></div>`).join(''):'<div class="cc-empty">No supported unit issues require immediate review.</div>'}</section>
+
     <section class="cc-section cc-position"><div class="cc-section-head"><div><div class="cc-section-title">Operating position</div><div class="cc-section-kicker">Current position · semantically separate</div></div><div class="cc-section-meta">${esc(asof)}</div></div><div class="cc-position-grid"><div class="cc-position-item emphasis"><span>Available Cash ${prov?'<em class="cc-provisional">PROVISIONAL</em>':''}</span><b>${fmtRp(pos.available_cash)}</b><small>safe-to-use view · not equity, debt, or partner funding</small></div><div class="cc-position-item"><span>Period Profit · ${lbl[CC_PERIOD]}</span><b>${fmtRp(pnl.period_net)}</b><small>performance for selected period</small></div><div class="cc-position-item"><span>Deployed Capital</span><b>${fmtRp(pos.deployed_capital)}</b><small>in active units · not cash</small></div><div class="cc-position-item"><span>Financing &amp; Exposure</span><b>Partner ${fmtRpShort(pos.partner_exposure)}</b><small>Debt ${fmtRpShort(pos.debt_outstanding)} · separate obligations</small></div></div>${nonUnitAlerts.length?`<div class="cc-context-list">${nonUnitAlerts.map(([,msg])=>`<span>${msg}</span>`).join('')}</div>`:''}</section>
 
     <section class="cc-section cc-interpretation"><div class="cc-section-head"><div><div class="cc-section-title">Financial position</div><div class="cc-section-kicker">Interpretation for the owner</div></div></div><div class="cc-interpretation-grid"><div class="cc-interpretation-block"><h3>Cash hierarchy</h3><div class="cc-rows"><div class="cc-row"><div class="cc-row-label">Available Cash${prov?' <span class="cc-provisional">PROVISIONAL</span>':''}</div><div class="cc-row-value">${fmtRp(pos.available_cash)}</div></div><div class="cc-row"><div class="cc-row-label">Actual Cash</div><div class="cc-row-value">${fmtRp(pos.actual_cash)}</div></div><div class="cc-row"><div class="cc-row-label">Restricted Reserve <span class="cc-row-note">restricted classification</span></div><div class="cc-row-value">${fmtRp(reservedCash)}</div></div></div></div><div class="cc-interpretation-block"><h3>Profit &amp; wealth</h3><div class="cc-rows"><div class="cc-row"><div class="cc-row-label">Revenue · ${lbl[CC_PERIOD]}</div><div class="cc-row-value">${pnlValue('revenue','period_revenue')}</div></div><div class="cc-row"><div class="cc-row-label">Period Net</div><div class="cc-row-value">${fmtRp(pnl.period_net)}</div></div><div class="cc-row"><div class="cc-row-label">Retained Profit <span class="cc-row-note">cumulative position</span></div><div class="cc-row-value">${fmtRp(pnl.unit_retained)}</div></div><div class="cc-row"><div class="cc-row-label">Future Retained</div><div class="cc-row-value">${fmtRp(futureRetained)}</div></div></div></div></div></section>
 
     <section class="cc-section cc-performance"><div class="cc-section-head"><div><div class="cc-section-title">Profit trend</div><div class="cc-section-kicker">One useful performance signal</div></div><div class="cc-section-meta">Six months</div></div><div class="cc-chart"><canvas id="ccTrend"></canvas></div></section>
-
-    <section class="cc-section cc-attention"><div class="cc-section-head"><div><div class="cc-section-title">Units requiring attention</div><div class="cc-section-kicker">Decision queue · ${unitAttention.length} unit${unitAttention.length===1?'':'s'}</div></div><button class="cc-link" onclick="showSection('unit')">Open Inventory →</button></div>${unitAttention.length?unitAttention.map(r=>`<div class="cc-attention-row"><div class="cc-attention-name">${esc(r.u.nama)}</div><div class="cc-attention-detail">${r.reasons.map(x=>x[0]).join(' · ')} · ${r.hold} hari</div><button class="cc-attention-action" onclick="showSection('unit')">Review →</button></div>`).join(''):'<div class="cc-empty">No supported unit issues require immediate review.</div>'}</section>
   </div>`;
   if(ccCapChart){ccCapChart.destroy();ccCapChart=null;}
   ccProfitTrend();
@@ -4963,7 +5146,11 @@ async function deletePartnerDeal(id){
 
 // ── PARTNER VIEW (presentation mode; ONLY partner-relevant fields — no internal
 //    Perkasa reserve/liabilities/other deals/company financials are shown) ──
+let PC_RETURN_FOCUS=null;
+function closePartnerView(){const ov=document.getElementById('pcOverlay');if(!ov)return;removeBlockingOverlay(ov);if(PC_RETURN_FOCUS&&document.contains(PC_RETURN_FOCUS))PC_RETURN_FOCUS.focus();PC_RETURN_FOCUS=null;}
 function openPartnerView(){
+  if(singletonOverlay('pcOverlay'))return;
+  PC_RETURN_FOCUS=document.activeElement;
   const c=pcCompute(pcInputs());
   const val=v=>v==null?'—':fmtRp(v);
   const share=c.loss?'0%':c.custom?'Custom':c.share.pct+'%';
@@ -4973,12 +5160,13 @@ function openPartnerView(){
     <span style="font-family:monospace;color:${o.neg?'var(--red)':o.strong?'var(--green)':'var(--text)'}">${o.neg?'− ':''}${v}</span></div>`;
   const ov=document.createElement('div');
   ov.id='pcOverlay';
-  ov.style.cssText='position:fixed;inset:0;background:rgba(15,20,30,.55);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px';
-  ov.innerHTML=`<div style="background:var(--surface);border-radius:16px;max-width:480px;width:100%;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.35);max-height:90vh;overflow:auto">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+  ov.className='workflow-overlay';
+  ov.innerHTML=`<div class="workflow-panel partner-view-panel" role="dialog" aria-modal="true" aria-labelledby="pcTitle" tabindex="-1">
+    <div class="workflow-head" style="margin-bottom:4px">
       <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)">Partner Settlement</div>
-      <button class="btn-sm" onclick="document.getElementById('pcOverlay').remove()">✕</button></div>
-    <h2 style="margin:0 0 2px;font-size:20px">${esc(c.unit||'Unit')}</h2>
+      <button class="btn-sm" aria-label="Close Partner Settlement" onclick="closePartnerView()">✕</button></div>
+    <div class="workflow-body">
+    <h2 id="pcTitle" style="margin:0 0 2px;font-size:20px">${esc(c.unit||'Unit')}</h2>
     <div style="color:var(--text3);font-size:13px;margin-bottom:14px">${c.type} · Holding ${c.hold} hari · Porsi Modal ${c.partnerPct.toFixed(1)}%</div>
 
     ${line('Selling Price',fmtRp(c.sell),{border:true})}
@@ -5000,10 +5188,10 @@ function openPartnerView(){
       • Partner Profit = Net Profit × Partner Profit Share.<br>
       • Partner Profit Share adalah bagian dari <b>Net Profit</b> — bukan bunga/return atas modal.<br>
       • Partner <b>tidak</b> memperoleh kepemilikan/ekuitas dari perhitungan ini.
-    </div>
+    </div></div>
   </div>`;
-  ov.addEventListener('click',e=>{ if(e.target===ov)ov.remove(); });
-  document.body.appendChild(ov);
+  ov.addEventListener('click',e=>{ if(e.target===ov)closePartnerView(); });
+  document.body.appendChild(ov);activateBlockingOverlay(ov);ov.querySelector('[role="dialog"]').focus();
 }
 
 // ═══════════════════ D3 · UNIT COST LEDGER ═══════════════════
@@ -5078,7 +5266,7 @@ function openUnitCreate(){
   ov.addEventListener('click',e=>{ if(e.target===ov)closeUnitCreate(); });
   ov.addEventListener('input',()=>{ucDirty=true;});
   ov.addEventListener('change',()=>{ucDirty=true;});
-  document.body.appendChild(ov);
+  document.body.appendChild(ov);activateBlockingOverlay(ov);
   document.getElementById('ucTgl').value=new Date().toISOString().slice(0,10);
   ucRecalc();
   document.getElementById('ucNama').focus();
@@ -5087,7 +5275,7 @@ let ucAddedThisSession=0,ucSaving=false,ucDirty=false,ucReturnFocus=null;
 function clearUnitCreateError(id){const input=document.getElementById(id),err=document.getElementById(id+'Error');if(input)input.removeAttribute('aria-invalid');if(err)err.textContent='';}
 function setUnitCreateError(id,message){const input=document.getElementById(id),err=document.getElementById(id+'Error');if(input){input.setAttribute('aria-invalid','true');input.focus();}if(err)err.textContent=message;showToast(message);}
 function unitCreateHasValues(){return ['ucNama','ucBase','ucPerkasa','ucPartnerName','ucPartnerAmt'].some(id=>{const el=document.getElementById(id);return el&&String(el.value||'').trim();});}
-function closeUnitCreate(force){const ov=document.getElementById('ucOverlay');if(!ov)return;if(ucSaving&&!force)return;if(!force&&ucDirty&&unitCreateHasValues()&&!confirm('Discard unsaved unit information?'))return;ov.remove();ucDirty=false;ucSaving=false;if(ucReturnFocus&&document.contains(ucReturnFocus))ucReturnFocus.focus();}
+function closeUnitCreate(force){const ov=document.getElementById('ucOverlay');if(!ov)return;if(ucSaving&&!force)return;if(!force&&ucDirty&&unitCreateHasValues()&&!confirm('Discard unsaved unit information?'))return;removeBlockingOverlay(ov);ucDirty=false;ucSaving=false;if(ucReturnFocus&&document.contains(ucReturnFocus))ucReturnFocus.focus();}
 function ucResetForm(){
   ['ucNama','ucBase','ucPerkasa','ucPartnerName','ucPartnerAmt'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
   document.getElementById('ucJenis').value='Mobil';
@@ -5158,12 +5346,12 @@ function openPerkasaEdit(id){
     <div class="unit-dialog-foot"><button class="btn-ghost unit-cancel" onclick="closePerkasaEdit()">Batal</button><button id="peSave" class="btn-primary unit-primary" onclick="savePerkasaEdit(${u.id})">Simpan Metadata</button></div></div>`;
   ov.addEventListener('click',e=>{if(e.target===ov)closePerkasaEdit();});
   ov.addEventListener('input',()=>{peDirty=true;});ov.addEventListener('change',()=>{peDirty=true;});
-  document.body.appendChild(ov);
+  document.body.appendChild(ov);activateBlockingOverlay(ov);
   document.getElementById('peNama').focus();
 }
 let peDirty=false,peSaving=false,peReturnFocus=null;
 function clearPerkasaEditError(){const el=document.getElementById('peNama'),err=document.getElementById('peNamaError');if(el)el.removeAttribute('aria-invalid');if(err)err.textContent='';}
-function closePerkasaEdit(force){const ov=document.getElementById('peOverlay');if(!ov)return;if(peSaving&&!force)return;if(!force&&peDirty&&!confirm('Discard unsaved metadata changes?'))return;ov.remove();peDirty=false;peSaving=false;if(peReturnFocus&&document.contains(peReturnFocus))peReturnFocus.focus();}
+function closePerkasaEdit(force){const ov=document.getElementById('peOverlay');if(!ov)return;if(peSaving&&!force)return;if(!force&&peDirty&&!confirm('Discard unsaved metadata changes?'))return;removeBlockingOverlay(ov);peDirty=false;peSaving=false;if(peReturnFocus&&document.contains(peReturnFocus))peReturnFocus.focus();}
 async function savePerkasaEdit(id){
   if(peSaving)return;
   const nama=(document.getElementById('peNama').value||'').trim();
@@ -5186,6 +5374,7 @@ function editUnitRouter(id){
 }
 document.addEventListener('keydown',e=>{
   if(e.key!=='Escape')return;
+  if(document.getElementById('pcOverlay')){e.preventDefault();closePartnerView();return;}
   if(document.getElementById('mobileMore').classList.contains('show')){e.preventDefault();closeMobileMore(true);return;}
   if(document.getElementById('modalOverlay').classList.contains('show')&&!LEGACY_SALE_SUBMITTING){e.preventDefault();closeModal();return;}
   if(document.getElementById('ucOverlay')&&!ucSaving){e.preventDefault();closeUnitCreate();return;}
@@ -5215,6 +5404,11 @@ function uceRenderSelect(unitId){
 }
 function uceSetFilter(f){ UCE_FILTER=f; document.querySelectorAll('#uceFilterBar .chip').forEach(c=>c.classList.toggle('active',c.dataset.uf===f)); const cur=uceRenderSelect(); loadCostEntries(); }
 function uceOnSearch(v){ UCE_SEARCH=String(v||'').toLowerCase(); uceRenderSelect(); loadCostEntries(); }
+function toggleCostLedgerOptional(){
+  const dialog=document.querySelector('#uceOverlay .cost-ledger-dialog'),button=document.getElementById('uceOptionalToggle');
+  if(!dialog||!button)return;
+  button.setAttribute('aria-expanded',String(dialog.classList.toggle('optional-open')));
+}
 function openCostLedger(unitId){
   if(singletonOverlay('uceOverlay'))return;
   if(unitId!=null){
@@ -5227,18 +5421,19 @@ function openCostLedger(unitId){
   UCE_MODE=unitId!=null?'entity':'generic';UCE_UNIT=null;UCE_RETURN_FOCUS=document.activeElement;captureWorkflowOrigin();
   UCE_FILTER='all'; UCE_SEARCH='';
   const ov=document.createElement('div'); ov.id='uceOverlay';
-  ov.style.cssText='position:fixed;inset:0;background:rgba(15,20,30,.55);z-index:9999;display:flex;align-items:flex-start;justify-content:center;padding:24px;overflow:auto';
-  ov.innerHTML=`<div class="cost-ledger-dialog" style="background:var(--surface);border-radius:16px;max-width:640px;width:100%;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.35)">
-    <div class="cost-ledger-head">
-      <div><h2>Cost Ledger</h2><p>Additional Direct Costs <span aria-hidden="true">·</span> <span id="uceUnitContext">Select a unit</span></p></div>
+  ov.className='workflow-overlay';
+  ov.innerHTML=`<div class="workflow-panel cost-ledger-dialog" role="dialog" aria-modal="true" aria-labelledby="uceTitle" tabindex="-1">
+    <div class="workflow-head cost-ledger-head">
+      <div><h2 id="uceTitle">Cost Ledger</h2><p>Additional Direct Costs <span aria-hidden="true">·</span> <span id="uceUnitContext">Select a unit</span></p></div>
       <button class="btn-sm" aria-label="Close Cost Ledger" onclick="closeCostLedger()">✕</button></div>
-    <p class="cost-ledger-guidance">Hanya unit Perkasa aktif/ready; unit terjual/settled tidak tersedia. Purchase Cost (Harga Beli / Akuisisi) ditetapkan saat pembuatan unit. Workflow ini mencatat Additional Direct Costs.</p>
-    <div id="uceFilterBar" class="cost-ledger-filters" style="display:flex;gap:6px;align-items:center;margin-bottom:8px;flex-wrap:wrap">
+    <div class="workflow-body">
+    <p class="cost-ledger-guidance">Unit Perkasa aktif/Ready saja; unit terjual tidak tersedia. Purchase Cost ditetapkan saat Tambah Unit. Di sini catat Additional Direct Costs.</p>
+    ${UCE_MODE==='generic'?`<div id="uceFilterBar" class="cost-ledger-filters" style="display:flex;gap:6px;align-items:center;margin-bottom:8px;flex-wrap:wrap">
       <button class="chip active" data-uf="all" onclick="uceSetFilter('all')">Semua</button>
       <button class="chip" data-uf="Mobil" onclick="uceSetFilter('Mobil')">Mobil</button>
       <button class="chip" data-uf="Motor" onclick="uceSetFilter('Motor')">Motor</button>
       <input id="uceSearch" oninput="uceOnSearch(this.value)" placeholder="Cari unit…" style="flex:1;min-width:120px;margin-left:auto;padding:8px 11px;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text)">
-    </div>
+    </div>`:''}
     <div class="fg cost-ledger-unit" style="margin:0 0 14px"><label>Unit</label>
       <select id="uceUnit" onchange="loadCostEntries()"></select></div>
     <div class="ih-grid cost-ledger-summary" id="uceKPI" style="margin-bottom:14px"></div>
@@ -5248,7 +5443,8 @@ function openCostLedger(unitId){
       <div class="fg" style="margin:0"><label>Nominal (Rp)</label><input id="uceAmt" type="number" placeholder="0"></div>
       <div class="fg" style="margin:0"><label>Tanggal</label><input id="uceDate" type="date"></div>
     </div>
-    <div class="cost-ledger-form-grid cost-ledger-form-grid-secondary" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+    <button type="button" class="cost-ledger-optional-toggle" id="uceOptionalToggle" aria-expanded="false" aria-controls="uceOptionalFields uceNote" onclick="toggleCostLedgerOptional()">Payment details &amp; note (optional)</button>
+    <div class="cost-ledger-form-grid cost-ledger-form-grid-secondary" id="uceOptionalFields" style="grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
       <div class="fg" style="margin:0"><label>Dibayar oleh (opsional)</label><select id="ucePaidSource"><option value="">— belum diklasifikasikan —</option><option value="company">Company / Perkasa (operating cash)</option><option value="partner">Partner</option><option value="other">Lainnya</option></select></div>
       <div class="fg" style="margin:0"><label>Status bayar (opsional)</label><select id="ucePayStatus"><option value="">—</option><option value="paid">Paid</option><option value="unpaid">Unpaid</option></select></div>
     </div>
@@ -5256,16 +5452,16 @@ function openCostLedger(unitId){
       <button id="uceSubmit" class="confirm" onclick="addCostEntry()">+ Tambah Biaya</button></div>
     <p class="cost-ledger-note">Hanya biaya langsung tambahan unit; jangan masukkan akuisisi (Base Unit Cost), payroll, kantor, software, atau overhead perusahaan.</p>
     <p class="cost-ledger-note cost-ledger-finance-note"><b>Cost ≠ Cash ≠ Funding.</b> Biaya masuk Base Unit Cost, tetapi tidak otomatis menjadi cash outlay atau Perkasa Funding. <b>Funding Gap = Base Unit Cost − Total Funding.</b> Atribusi “dibayar oleh” tetap opsional.</p>
-    <h3 class="cost-ledger-history-title">Riwayat Biaya</h3><div class="table-scroll cost-ledger-history"><table class="track-table" id="uceTable"></table></div>
+    <h3 class="cost-ledger-history-title">Riwayat Biaya</h3><div class="table-scroll cost-ledger-history"><table class="track-table" id="uceTable"></table></div></div>
   </div>`;
   ov.addEventListener('click',e=>{ if(e.target===ov)closeCostLedger(); });
-  document.body.appendChild(ov);
+  document.body.appendChild(ov);activateBlockingOverlay(ov);ov.querySelector('[role="dialog"]').focus();
   document.getElementById('uceDate').value=new Date().toISOString().slice(0,10);
   uceRenderSelect(unitId);
   loadCostEntries();
 }
 function costLedgerDirty(){return ['uceDesc','uceAmt','uceNote'].some(id=>((document.getElementById(id)||{}).value||'').trim())||((document.getElementById('ucePaidSource')||{}).value||'')||((document.getElementById('ucePayStatus')||{}).value||'');}
-function closeCostLedger(force=false){const ov=document.getElementById('uceOverlay');if(!ov||UCE_SUBMITTING)return;if(!force&&costLedgerDirty()&&!confirm('Batalkan biaya yang belum disimpan?'))return;ov.remove();UCE_UNIT=null;UCE_MODE='generic';if(UCE_RETURN_FOCUS&&document.contains(UCE_RETURN_FOCUS))UCE_RETURN_FOCUS.focus();}
+function closeCostLedger(force=false){const ov=document.getElementById('uceOverlay');if(!ov||UCE_SUBMITTING)return;if(!force&&costLedgerDirty()&&!confirm('Batalkan biaya yang belum disimpan?'))return;removeBlockingOverlay(ov);UCE_UNIT=null;UCE_MODE='generic';if(UCE_RETURN_FOCUS&&document.contains(UCE_RETURN_FOCUS))UCE_RETURN_FOCUS.focus();}
 async function loadCostEntries(){
   const sel=document.getElementById('uceUnit'); if(!sel)return;
   UCE_UNIT=sel.value; const kpi=document.getElementById('uceKPI'), tb=document.getElementById('uceTable');
@@ -5357,24 +5553,25 @@ function openFunding(unitId){
   UF_RETURN_FOCUS=document.activeElement;captureWorkflowOrigin();
   const perkasa=(units||[]).filter(u=>u.fundingModel==='perkasa').sort((a,b)=>String(a.nama||'').localeCompare(String(b.nama||'')));
   const ov=document.createElement('div'); ov.id='ufOverlay';
-  ov.style.cssText='position:fixed;inset:0;background:rgba(15,20,30,.55);z-index:9999;display:flex;align-items:flex-start;justify-content:center;padding:24px;overflow:auto';
+  ov.className='workflow-overlay';
   const opts=perkasa.map(u=>`<option value="${u.id}"${String(u.id)===String(unitId)?' selected':''}>${esc(u.nama)}${u.status==='terjual'?' (terjual)':''}</option>`).join('');
-  ov.innerHTML=`<div style="background:var(--surface);border-radius:16px;max-width:660px;width:100%;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.35)">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)">Unit Funding · Perkasa Model</div>
+  ov.innerHTML=`<div class="workflow-panel funding-dialog" role="dialog" aria-modal="true" aria-labelledby="ufTitle" tabindex="-1">
+    <div class="workflow-head" style="margin-bottom:4px">
+      <div id="ufTitle" style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)">Unit Funding · Perkasa Model</div>
       <button class="btn-sm" aria-label="Close Unit Funding" onclick="closeFunding()">✕</button></div>
+    <div class="workflow-body">
     <div style="font-size:11.5px;color:var(--text3);margin-bottom:12px">Surface pengelolaan &amp; riwayat pendanaan unit <b>Perkasa</b>. Pembuatan unit dilakukan lewat <b>+ Tambah Unit</b>.</div>
     ${perkasa.length?`<div class="fg" style="margin:0 0 12px"><label>Unit</label><select id="ufUnit" onchange="loadFunding()">${opts}</select></div>`
       :`<div style="padding:14px;background:var(--bg);border-radius:10px;margin-bottom:12px;font-size:13px;color:var(--text2)">Belum ada unit Perkasa. Gunakan tombol <b>+ Tambah Unit</b> untuk membuat unit beserta Purchase Cost dan pendanaan awal dalam satu langkah.</div>`}
-    <div id="ufBody"></div>
+    <div id="ufBody"></div></div>
   </div>`;
   ov.addEventListener('click',e=>{ if(e.target===ov)closeFunding(); });
-  document.body.appendChild(ov);
+  document.body.appendChild(ov);activateBlockingOverlay(ov);ov.querySelector('[role="dialog"]').focus();
   if(perkasa.length) loadFunding();
 }
 function fundingSnapshot(){return ['ufPname','ufAmt','agrName','agrType','agrVal','agrLoss'].map(id=>((document.getElementById(id)||{}).value||'')).join('\u001f');}
 function fundingDirty(){return fundingSnapshot()!==UF_BASELINE;}
-function closeFunding(force=false){const ov=document.getElementById('ufOverlay');if(!ov||UF_SUBMITTING)return;if(!force&&fundingDirty()&&!confirm('Batalkan perubahan funding yang belum disimpan?'))return;ov.remove();UF_UNIT=null;if(UF_RETURN_FOCUS&&document.contains(UF_RETURN_FOCUS))UF_RETURN_FOCUS.focus();}
+function closeFunding(force=false){const ov=document.getElementById('ufOverlay');if(!ov||UF_SUBMITTING)return;if(!force&&fundingDirty()&&!confirm('Batalkan perubahan funding yang belum disimpan?'))return;removeBlockingOverlay(ov);UF_UNIT=null;if(UF_RETURN_FOCUS&&document.contains(UF_RETURN_FOCUS))UF_RETURN_FOCUS.focus();}
 async function loadFunding(){
   const sel=document.getElementById('ufUnit'); if(!sel)return; UF_UNIT=sel.value;
   const body=document.getElementById('ufBody');
@@ -5526,7 +5723,7 @@ async function renderFounderCapital(){
     const thead=`<thead><tr><th>Tanggal</th><th>Participant</th><th>Tipe</th><th class="num">Nominal</th><th>Catatan</th><th class="num">Aksi</th></tr></thead>`;
     const tp={contribution:'Contribution',return:'Return',adjustment:'Adjustment'};
     const body=rows.length?rows.map(r=>`<tr>
-      <td>${r.tgl||'—'}</td><td>${esc(r.participant)}</td>
+      <td>${r.tgl||'—'}<span class="register-identity-detail" aria-hidden="true">${esc(r.participant)}</span></td><td>${esc(r.participant)}</td>
       <td>${tp[r.tipe]||r.tipe}</td>
       <td class="num" style="color:${r.tipe==='return'?'var(--red)':'var(--green,#178A5A)'}">${r.tipe==='return'?'− ':''}${fmtRp(Math.abs(Number(r.amount||0)))}</td>
       <td style="font-size:12px;color:var(--text3)">${esc(r.notes||'')}</td>
@@ -5674,7 +5871,7 @@ async function renderPartnerCollab(){
     const setlTxt=settled?esc(s.settle_date):'—';
     const status=settled?(s.is_loss?'<span class="badge" style="background:var(--red);color:#fff">LOSS</span>':'<span class="badge" style="background:var(--green);color:#fff">SETTLED</span>')
                         :'<span class="badge aktif">ACTIVE</span>';
-    return `<tr><td>${esc(u.nama||('#'+v.unit_id))}</td><td>${esc(v.partner_name||'Partner')}</td><td>${esc(vehicle)}</td>
+    return `<tr><td>${esc(u.nama||('#'+v.unit_id))}<span class="register-identity-detail" aria-hidden="true">${esc(v.partner_name||'Partner')}</span></td><td>${esc(v.partner_name||'Partner')}</td><td>${esc(vehicle)}</td>
       <td class="num">${fmtRp(v.base_unit_cost)}</td><td class="num">${fmtRp(partnerF)}</td>
       <td class="num">${exposure.toFixed(2).replace(/\.00$/,'')}%</td><td class="num">${holding} hari</td>
       <td>${esc(vehicle)} · ${PM_EXP_DISPLAY[br]||br} · ${hb}</td>
@@ -5705,23 +5902,24 @@ function openSettle(unitId){
   if(unitId!=null&&!perkasa.some(u=>String(u.id)===String(unitId))){showToast('Settlement tidak dapat dibuka untuk unit yang dipilih.');return;}
   ST_MODE=unitId!=null?'entity':'generic';ST_UNIT=null;ST_RETURN_FOCUS=document.activeElement;captureWorkflowOrigin();
   const ov=document.createElement('div'); ov.id='stOverlay';
-  ov.style.cssText='position:fixed;inset:0;background:rgba(15,20,30,.55);z-index:9999;display:flex;align-items:flex-start;justify-content:center;padding:24px;overflow:auto';
+  ov.className='workflow-overlay';
   const opts=`<option value="">Pilih unit…</option>`+perkasa.map(u=>`<option value="${u.id}"${String(u.id)===String(unitId)?' selected':''}>${esc(u.nama)}${u.status==='terjual'?' · settled':''}</option>`).join('');
-  ov.innerHTML=`<div style="background:var(--surface);border-radius:16px;max-width:620px;width:100%;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.35)">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)">Sale &amp; Settlement · Perkasa</div>
+  ov.innerHTML=`<div class="workflow-panel settlement-dialog" role="dialog" aria-modal="true" aria-labelledby="stTitle" tabindex="-1">
+    <div class="workflow-head" style="margin-bottom:4px">
+      <div id="stTitle" style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)">Sale &amp; Settlement · Perkasa</div>
       <button class="btn-sm" aria-label="Close Settlement" onclick="closeSettle()">✕</button></div>
+    <div class="workflow-body">
     ${perkasa.length?`<div class="fg" style="margin:6px 0 12px"><label>Unit</label><select id="stUnit" onchange="loadSettle()">${opts}</select></div>`
       :`<div style="padding:14px;background:var(--bg);border-radius:10px;font-size:13px;color:var(--text2)">Belum ada unit model Perkasa.</div>`}
-    <div id="stBody"></div>
+    <div id="stBody"></div></div>
   </div>`;
   ov.addEventListener('click',e=>{ if(e.target===ov)closeSettle(); });
-  document.body.appendChild(ov);
+  document.body.appendChild(ov);activateBlockingOverlay(ov);ov.querySelector('[role="dialog"]').focus();
   if(unitId!=null&&perkasa.length)loadSettle();else if(perkasa.length)document.getElementById('stBody').innerHTML='<div class="empty-state">Pilih unit untuk membuka Settlement.</div>';
 }
 function settlementSnapshot(){return ['stPrice','stCost','stDate'].map(id=>((document.getElementById(id)||{}).value||'')).join('\u001f');}
 function settlementDirty(){return !!document.getElementById('stPrice')&&settlementSnapshot()!==ST_BASELINE;}
-function closeSettle(force=false){const ov=document.getElementById('stOverlay');if(!ov||ST_SUBMITTING)return;if(!force&&settlementDirty()&&!confirm('Batalkan Settlement yang belum disimpan?'))return;ov.remove();ST_UNIT=null;ST_MODE='generic';ST_BASELINE='';if(ST_RETURN_FOCUS&&document.contains(ST_RETURN_FOCUS))ST_RETURN_FOCUS.focus();}
+function closeSettle(force=false){const ov=document.getElementById('stOverlay');if(!ov||ST_SUBMITTING)return;if(!force&&settlementDirty()&&!confirm('Batalkan Settlement yang belum disimpan?'))return;removeBlockingOverlay(ov);ST_UNIT=null;ST_MODE='generic';ST_BASELINE='';if(ST_RETURN_FOCUS&&document.contains(ST_RETURN_FOCUS))ST_RETURN_FOCUS.focus();}
 async function loadSettle(){
   const sel=document.getElementById('stUnit'); if(!sel)return; ST_UNIT=sel.value;
   const body=document.getElementById('stBody');
